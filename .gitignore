@@ -1,0 +1,66 @@
+﻿# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+#windows
+*.sdf
+*.opensdf
+bin/
+lib/
+/ipch
+COMMON/Debug
+Netproxy/Debug
+Player/Debug
+Duilib/Debug
+Duilib/Build
+
+#	# 此为注释 – 将被 Git 忽略 
+#	*.a 
+#	# 忽略所有 .a 结尾的文件 
+#	!lib.a 
+#	#但 lib.a 除外 
+#	/TODO # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO build/ 
+#	# 忽略 build/ 目录下的所有文件 
+#	doc/*.txt 
+#	# 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+
