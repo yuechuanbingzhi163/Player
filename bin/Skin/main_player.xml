@@ -4,9 +4,9 @@
     <VerticalLayout name="bk" bkcolor="#FFFFFFFF">
         <HorizontalLayout name="HorizontalLayoutUI1" height="50" bkcolor="#FF4EBFCD" >
             <Control name="ControlUI1"  width="5"  />
-            <Label name="head_icon" width="46" height="46" padding="0,2,0,2" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Label name="head_icon" width="46" height="46" padding="0,2,0,2" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" normalimage=""/>
             <Control name="ControlUI2" />
-            <Edit name="search_edit" width="200" height="24" padding="0,13,0,13" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <RichEdit name="search_edit" width="200" height="24" padding="0,13,0,13" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
             <Button name="btn_feedback" width="30" height="24" padding="0,13,0,13" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
             <Button name="btn_change_color" width="30" height="24" padding="0,13,0,13" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
             <Button name="btn_menu" width="30" height="24" padding="0,13,0,13" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
@@ -14,10 +14,10 @@
             <HorizontalLayout name="HorizontalLayoutUI2"  width="90" inset="0,13,2,13">
                 <Button name="btn_min"  width="23" height="24" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="Main\\btn_min_normal.png" hotimage="Main\\btn_min_hot.png" pushedimage="Main\\btn_min_down.png" />
                 <Control name="ControlUI4" width="6" />
-                <Button name="btn_max"  width="23" height="24" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+                <Button name="btn_max"  width="23" height="24" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="Main\\btn_max_normal.png" hotimage="Main\\btn_max_hot.png" pushedimage="Main\\btn_max_down.png" />
                 <Button name="btn_restore" visible="false" width="23" height="24" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
                 <Control name="ControlUI5"  width="6" />
-                <Button name="btn_close"  width="23" height="24" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+                <Button name="btn_close"  width="23" height="24" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="Main\\btn_close_normal.png" hotimage="Main\\btn_close_hot.png" pushedimage="Main\\btn_close_down.png" />
             </HorizontalLayout>
         </HorizontalLayout>
         <VerticalLayout name="VerticalLayoutUI1" >
