@@ -45,7 +45,9 @@ Temporary Items
 #windows
 *.sdf
 *.opensdf
-bin/
+bin/*.Dll
+bin/*.exe
+bin/*.ilk
 lib/
 /ipch
 COMMON/Debug
