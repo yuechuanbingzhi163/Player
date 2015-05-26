@@ -113,24 +113,27 @@ void CPlayerWnd::InitWindow()
 	m_pBtnTry = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("btn_try")));
 	m_pBtnLocal = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("btn_local")));
 	m_pBtnDown = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("btn_down")));
+
+
+	m_pChangBgWnd = NULL;
 }
 
 LRESULT CPlayerWnd::HandleCustomMessage(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
-	if (uMsg == WM_NCLBUTTONDOWN || uMsg == WM_NCLBUTTONDBLCLK)
+	if (uMsg == WM_NCLBUTTONDOWN)
 	{
 		RECT rect = m_pSearchEdit->GetPos();
 		POINT point;
 		point.x = GET_X_LPARAM(lParam); 
 		point.y = GET_Y_LPARAM(lParam);
 		ScreenToClient(m_hWnd,&point);
-		if (point.x > rect.left && point.x < rect.right && point.y > rect.top && point.y < rect.bottom && rect.right - rect.left == 200)
+		if (point.x > rect.left && point.x < rect.right && point.y > rect.top && point.y < rect.bottom )
 		{
 			m_pSearchEdit->SetFocus();
 			bHandled = true;
 			m_PaintManager.SetTimer(m_pSearchEdit,TimerId,1);
 		}
-		else 
+		else
 		{
 			m_pSearchEdit->SetFixedWidth(200);
 		}
@@ -138,7 +141,16 @@ LRESULT CPlayerWnd::HandleCustomMessage(UINT uMsg, WPARAM wParam, LPARAM lParam,
 	}
 	else if(uMsg == WM_NCLBUTTONDBLCLK)
 	{
-		
+		RECT rect = m_pSearchEdit->GetPos();
+		POINT point;
+		point.x = GET_X_LPARAM(lParam); 
+		point.y = GET_Y_LPARAM(lParam);
+		ScreenToClient(m_hWnd,&point);
+		if (point.x > rect.left && point.x < rect.right && point.y > rect.top && point.y < rect.bottom )
+		{
+			bHandled = true;
+		}
+		return 0;
 	}
 
 	return 0;
@@ -168,10 +180,19 @@ void CPlayerWnd::Notify(TNotifyUI& msg)
 			m_pBtnMax->SetVisible(true);
 			m_pBtnRestore->SetVisible(false);
 		}
-		/*else if(msg.pSender == )
+		else if(msg.pSender->GetName() == _T("btn_change_skin"))
 		{
-
-		}*/
+			if (m_pChangBgWnd == NULL)
+			{
+				m_pChangBgWnd = new CChangeBackgroudWnd();
+			}
+			if (!::IsWindow(m_pChangBgWnd->GetHWND()))
+			{
+				m_pChangBgWnd->Create(m_hWnd,_T(""),WS_POPUP, WS_EX_TOOLWINDOW);
+			}
+			m_pChangBgWnd->CenterWindow();
+			m_pChangBgWnd->ShowWindow(true);
+		}
 	}
 	else if (_tcsicmp(msg.sType, _T("timer")) == 0)
 	{

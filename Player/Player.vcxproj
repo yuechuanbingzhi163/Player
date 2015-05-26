@@ -83,11 +83,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChangeBgWnd.h" />
     <ClInclude Include="PlayerWnd.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ChangeBgWnd.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PlayerWnd.cpp" />
     <ClCompile Include="stdafx.cpp">

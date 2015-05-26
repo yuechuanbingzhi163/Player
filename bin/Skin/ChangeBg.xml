@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="230,250" sizebox="4,4,6,6">
+    <VerticalLayout name="VerticalLayoutUI1" bkcolor="#FFFFFFFF" inset="10,0,10,10" bordersize="1" bordercolor="#fff0f0f0">
+        <HorizontalLayout name="HorizontalLayoutUI1" height="40" inset="5,10,0,10">
+            <Button name="bnt_bgimage"  width="20" height="20" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bkimage="main\\skin.png"/>
+            <Control width="8" />
+            <Button name="btn_color"  width="20" height="20" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bkimage="main\\color.png"/>
+        </HorizontalLayout>
+        <HorizontalLayout name="HorizontalLayoutUI2" height="170" />
+        <HorizontalLayout name="HorizontalLayoutUI3" height="30">
+           <Button name="btn_switch" pos="18,2,38,22" width="20" height="20" padding="10,5,5,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+          <Control width="8" />  
+          <Slider name="SliderUI1" pos="46,6,196,10" width="150" height="4" padding="0,13,0,13" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" min="0" max="100" value="0" hor="true" thumbsize="10,10" />
+        </HorizontalLayout>
+    </VerticalLayout>
+</Window>

@@ -27,6 +27,9 @@
     <ClInclude Include="PlayerWnd.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ChangeBgWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -36,6 +39,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="PlayerWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeBgWnd.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

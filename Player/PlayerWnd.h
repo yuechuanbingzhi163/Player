@@ -1,6 +1,6 @@
 #ifndef _PLAYER_WND_H
 #define _PLAYER_WND_H
-
+#include "ChangeBgWnd.h"
 
 class CPlayerWnd : public WindowImplBase
 {
@@ -35,13 +35,14 @@ private:
 	int			m_nIncWidth;
 	int			m_nSearchWidth;
 	int			TimerId;
+	bool		m_bExpande;
 
 	COptionUI* m_pBtnLib;
 	COptionUI* m_pBtnRep;
 	COptionUI* m_pBtnTry;
 	COptionUI* m_pBtnLocal;
 	COptionUI* m_pBtnDown;
-
+	CChangeBackgroudWnd *m_pChangBgWnd;
 };
 
 
