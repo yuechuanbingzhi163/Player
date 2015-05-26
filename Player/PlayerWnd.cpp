@@ -3,6 +3,9 @@
 
 
 CPlayerWnd::CPlayerWnd()
+	: m_nIncWidth(5)
+	, m_nSearchWidth(200)
+	, TimerId(10)
 {}
 
 CPlayerWnd::~CPlayerWnd()
@@ -99,9 +102,93 @@ LRESULT CPlayerWnd::ResponseDefaultKeyEvent(WPARAM wParam)
 
 
 void CPlayerWnd::InitWindow()
-{}
+{
+	m_pBtnMin = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("btn_min")));
+	m_pBtnMax = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("btn_max")));
+	m_pBtnClose = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("btn_close")));
+	m_pBtnRestore = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("btn_restore")));
+	m_pSearchEdit = static_cast<CRichEditUI*>(m_PaintManager.FindControl(_T("search_edit")));
+	m_pBtnLib = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("music_lib")));
+	m_pBtnRep = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("music_rep")));
+	m_pBtnTry = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("btn_try")));
+	m_pBtnLocal = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("btn_local")));
+	m_pBtnDown = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("btn_down")));
+}
 
 LRESULT CPlayerWnd::HandleCustomMessage(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
+	if (uMsg == WM_NCLBUTTONDOWN || uMsg == WM_NCLBUTTONDBLCLK)
+	{
+		RECT rect = m_pSearchEdit->GetPos();
+		POINT point;
+		point.x = GET_X_LPARAM(lParam); 
+		point.y = GET_Y_LPARAM(lParam);
+		ScreenToClient(m_hWnd,&point);
+		if (point.x > rect.left && point.x < rect.right && point.y > rect.top && point.y < rect.bottom && rect.right - rect.left == 200)
+		{
+			m_pSearchEdit->SetFocus();
+			bHandled = true;
+			m_PaintManager.SetTimer(m_pSearchEdit,TimerId,1);
+		}
+		else 
+		{
+			m_pSearchEdit->SetFixedWidth(200);
+		}
+		return 0;
+	}
+	else if(uMsg == WM_NCLBUTTONDBLCLK)
+	{
+		
+	}
+
 	return 0;
+}
+
+void CPlayerWnd::Notify(TNotifyUI& msg)
+{
+	if (msg.sType == _T("click"))
+	{
+		if (msg.pSender == m_pBtnMin)
+		{
+			SendMessage(WM_SYSCOMMAND,SC_MINIMIZE,0);
+		}
+		else if (msg.pSender == m_pBtnMax)
+		{
+			SendMessage(WM_SYSCOMMAND,SC_MAXIMIZE,0);
+			m_pBtnMax->SetVisible(false);
+			m_pBtnRestore->SetVisible(true);
+		}
+		else if (msg.pSender == m_pBtnClose)
+		{
+			Close();
+		}
+		else if(msg.pSender == m_pBtnRestore)
+		{
+			SendMessage(WM_SYSCOMMAND,SC_RESTORE,0);
+			m_pBtnMax->SetVisible(true);
+			m_pBtnRestore->SetVisible(false);
+		}
+		/*else if(msg.pSender == )
+		{
+
+		}*/
+	}
+	else if (_tcsicmp(msg.sType, _T("timer")) == 0)
+	{
+		return OnTimer(msg);
+	}
+}
+
+void CPlayerWnd::OnTimer(TNotifyUI& msg)
+{
+	if ( TimerId == msg.wParam)
+	{
+		m_nSearchWidth += m_nIncWidth;
+		m_pSearchEdit->SetFixedWidth(m_nSearchWidth);
+		if (m_nSearchWidth == 390)
+		{
+			m_nSearchWidth = 200;
+			m_PaintManager.KillTimer(m_pSearchEdit);
+		}
+	}
 }
