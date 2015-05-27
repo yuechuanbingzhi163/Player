@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window>
+    <VerticalLayout name="VerticalLayoutUI1" bkcolor="#FFFFFFFF">
+        <Button name="ButtonUI1" float="true" pos="148,163,208,193" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" text="ccc"/>
+        <Button name="ButtonUI2" float="true" pos="273,182,333,212" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" text="ddd"/>
+        <Button name="ButtonUI3" float="true" pos="228,261,288,291" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" text="fff"/>
+    </VerticalLayout>
+</Window>

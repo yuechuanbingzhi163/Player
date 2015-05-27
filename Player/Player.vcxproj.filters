@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\Tabs">
+      <UniqueIdentifier>{47bb76f8-c3e8-446c-9a52-7b80261eeda8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Tabs">
+      <UniqueIdentifier>{8a81eef1-2d0f-48a4-a320-5cd78b08ac7e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -30,6 +36,9 @@
     <ClInclude Include="ChangeBgWnd.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="TabLibrary.h">
+      <Filter>头文件\Tabs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -43,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="ChangeBgWnd.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TabLibrary.cpp">
+      <Filter>源文件\Tabs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

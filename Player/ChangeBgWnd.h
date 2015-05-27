@@ -15,9 +15,16 @@ public:
 	LRESULT MessageHandler(UINT uMsg, WPARAM wParam, LPARAM /*lParam*/, bool& /*bHandled*/);
 	LRESULT ResponseDefaultKeyEvent(WPARAM wParam);
 
-	void	Init();
+	void	Init(RECT rect);
 	void	InitWindow();
 	LRESULT OnKillFocus(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& bHandled);
+	void	MoveWindow();
+	void	Notify(TNotifyUI& msg);
+	bool    OnSliderTransparent(void *param);
+private:
+	RECT	m_rectParent;
+	COptionUI *m_pOptSwitch;
+	CSliderUI *m_pSlider;
 };
 
 #endif 

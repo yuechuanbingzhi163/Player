@@ -36,11 +36,39 @@
                     <Option name="btn_local" text="本地导入"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
                     <Option name="btn_down" text="下载的歌曲"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
                     <HorizontalLayout name="HorizontalLayoutUI5"  height="30">
-                        <Label name="LabelUI3" text="我创建的"  width="100" height="30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
-                        <Button name="btn_addlist"  width="24" height="24" padding="8,3,0,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+                        <Label name="LabelUI3" text="我创建的"  width="100" height="30" textcolor="#FF999999" disabledtextcolor="#FFA7A6AA" />
+                        <Button name="btn_addlist"  width="24" height="24" padding="8,3,0,3" textcolor="#FF000000" bkimage="file='main\\btn_add_opt.png' dest='4,4,20,20'" hotimage="file='main\\all_btn_over.png'" disabledtextcolor="#FFA7A6AA" align="center" />
                     </HorizontalLayout>
-                    <VerticalLayout name="VerticalLayoutUI3" pos="5,226,5,226" />
+                    <VerticalLayout name="VerticalLayoutUI3" />
                 </VerticalLayout>
+                <HorizontalLayout>                 
+                  <TabLayout name="tabs">
+                    <HorizontalLayout>
+                      <MusicLib />
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                      <Text text="查杀木马" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                      <Text text="清理插件" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                      <Text text="修复漏洞" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                      <Text text="清理垃圾" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                      <Text text="清理痕迹" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                      <Text text="系统修复" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                      <Text text="高级工具" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />
+                    </HorizontalLayout>
+                  </TabLayout>
+                </HorizontalLayout>
             </HorizontalLayout>
             <HorizontalLayout name="HorizontalLayoutUI4" height="50" bkcolor="#FF2B3141">
                 <HorizontalLayout name="HorizontalLayoutUI6" width="150" inset="8,6,8,6">

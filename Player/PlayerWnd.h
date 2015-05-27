@@ -43,6 +43,8 @@ private:
 	COptionUI* m_pBtnLocal;
 	COptionUI* m_pBtnDown;
 	CChangeBackgroudWnd *m_pChangBgWnd;
+
+	CTabLayoutUI* m_tabs;
 };
 
 
