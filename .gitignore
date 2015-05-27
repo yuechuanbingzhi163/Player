@@ -55,6 +55,7 @@ Netproxy/Debug
 Player/Debug
 Duilib/Debug
 Duilib/Build
+*.suo
 
 #	# 此为注释 – 将被 Git 忽略 
 #	*.a 
