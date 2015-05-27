@@ -4,7 +4,6 @@
 #include "stdafx.h"
 #include "PlayerWnd.h"
 
-
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*lpCmdLine*/, int nCmdShow)
 {
 	CPaintManagerUI::SetInstance(hInstance);
