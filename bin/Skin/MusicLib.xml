@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<Window>
-    <VerticalLayout name="VerticalLayoutUI1" bkcolor="#FFFFFFFF">
-        <Button name="ButtonUI1" float="true" pos="148,163,208,193" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" text="ccc"/>
-        <Button name="ButtonUI2" float="true" pos="273,182,333,212" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" text="ddd"/>
-        <Button name="ButtonUI3" float="true" pos="228,261,288,291" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" text="fff"/>
+<Window >
+    <VerticalLayout name="VerticalLayoutUI1" bkcolor="#FFFFFFFF" bordersize="1" bordercolor="#ffe0e0e0">
+        <VerticalLayout name="VerticalLayoutUI2">
+            <HorizontalLayout name="HorizontalLayoutUI1" height="34" bkcolor="#FFF7F5F5" inset="0,4,0,4" childpadding="18">
+                <Control name="ControlUI1" width="8" />
+                <Option name="opt_recommend" text="推荐" pos="51,3,97,29" width="46" height="26" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="lib_group" selectedimage="file='main\\opt_selected.png' corner='2,2,2,2'" hotimage="main\\opt_hot.png"/>
+                <Option name="opt_rank" text="排行" pos="151,8,197,34" width="46" height="26" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="lib_group" selectedimage="file='main\\opt_selected.png' corner='2,2,2,2'" hotimage="main\\opt_hot.png"/>
+                <Option name="opt_list" text="歌单" pos="236,14,282,40" width="46" height="26" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="lib_group" selectedimage="file='main\\opt_selected.png' corner='2,2,2,2'" hotimage="main\\opt_hot.png"/>
+                <Option name="opt_radio" text="电台" pos="220,2,266,28" width="46" height="26" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="lib_group" selectedimage="file='main\\opt_selected.png' corner='2,2,2,2'" hotimage="main\\opt_hot.png"/>
+                <Option name="opt_class" text="分类" pos="325,15,371,41" width="46" height="26" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="lib_group" selectedimage="file='main\\opt_selected.png' corner='2,2,2,2'" hotimage="main\\opt_hot.png"/>
+                <Option name="opt_mv" text="MV" pos="369,15,415,41" width="46" height="26" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="lib_group" selectedimage="file='main\\opt_selected.png' corner='2,2,2,2'" hotimage="main\\opt_hot.png" />
+                <Option name="opt_find" text="发现" pos="437,8,483,34" width="46" height="26" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="lib_group" selectedimage="file='main\\opt_selected.png' corner='2,2,2,2'" hotimage="main\\opt_hot.png"/>
+                <Control name="ControlUI2" pos="483,6,483,32" height="26" />
+            </HorizontalLayout>
+            <TabLayout name="lib_tab" >
+              <HorizontalLayout>
+                <Text text="1" />
+              </HorizontalLayout>
+              <HorizontalLayout>
+                <Text text="2" />
+              </HorizontalLayout>
+              <HorizontalLayout>
+                <Text text="3" />
+              </HorizontalLayout>
+              <HorizontalLayout>
+                <Text text="4" />
+              </HorizontalLayout>
+              <HorizontalLayout>
+                <Text text="5" />
+              </HorizontalLayout>
+              <HorizontalLayout>
+                <Text text="6" />
+              </HorizontalLayout>
+              <HorizontalLayout>
+                <Text text="7" />
+              </HorizontalLayout>
+            </TabLayout>
+        </VerticalLayout>
     </VerticalLayout>
 </Window>

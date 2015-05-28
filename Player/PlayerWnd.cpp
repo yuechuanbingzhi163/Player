@@ -1,6 +1,8 @@
 #include "StdAfx.h"
-#include "PlayerWnd.h"
 #include "TabLibrary.h"
+#include "TabTry.h"
+#include "ChangeBgWnd.h"
+#include "PlayerWnd.h"
 
 CPlayerWnd::CPlayerWnd()
 	: m_nIncWidth(5)
@@ -24,11 +26,11 @@ CControlUI* CPlayerWnd::CreateControl(LPCTSTR pstrClass)
 	{
 		return new CTabLibraryUI();
 	}
-	else if (_tcsicmp(pstrClass, _T("GroupList")) == 0)
+	else if (_tcsicmp(pstrClass, _T("MusicTry")) == 0)
 	{
-		//return new CGroupsUI(m_PaintManager);
+		return new CTabTryUI(m_PaintManager);
 	}
-	else if (_tcsicmp(pstrClass, _T("MicroBlog")) == 0)
+	else if (_tcsicmp(pstrClass, _T("")) == 0)
 	{
 		//return new CMicroBlogUI(m_PaintManager);
 	}
@@ -110,12 +112,12 @@ void CPlayerWnd::InitWindow()
 	m_pSearchEdit = static_cast<CRichEditUI*>(m_PaintManager.FindControl(_T("search_edit")));
 	m_pBtnLib = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("music_lib")));
 	m_pBtnRep = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("music_rep")));
-	m_pBtnTry = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("btn_try")));
-	m_pBtnLocal = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("btn_local")));
-	m_pBtnDown = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("btn_down")));
+	m_pBtnTry = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("music_try")));
+	m_pBtnLocal = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("music_local")));
+	m_pBtnDown = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("music_down")));
 
 	m_tabs	=  static_cast<CTabLayoutUI*>(m_PaintManager.FindControl(_T("tabs")));
-
+	UpdateTryList();
 	m_pChangBgWnd = NULL;
 }
 
@@ -186,7 +188,7 @@ void CPlayerWnd::Notify(TNotifyUI& msg)
 		else if(msg.pSender->GetName() == _T("btn_change_skin"))
 		{
 			if (m_pChangBgWnd == NULL)
-				m_pChangBgWnd = new CChangeBackgroudWnd();
+				m_pChangBgWnd = new CChangeBackgroudWnd(this);
 
 			if (!::IsWindow(m_pChangBgWnd->GetHWND()))
 				m_pChangBgWnd->Create(m_hWnd,_T(""),WS_POPUP, WS_EX_TOOLWINDOW);
@@ -203,7 +205,7 @@ void CPlayerWnd::Notify(TNotifyUI& msg)
 	{
 		return OnTimer(msg);
 	}
-	else if (_tcsicmp(msg.sType, _T("selectchanged")))
+	else if (_tcsicmp(msg.sType, _T("selectchanged")) == 0)
 	{
 		if (msg.pSender == m_PaintManager.FindControl(_T("music_lib")))
 		{
@@ -213,15 +215,15 @@ void CPlayerWnd::Notify(TNotifyUI& msg)
 		{
 			m_tabs->SelectItem(1);
 		}
-		else if (msg.pSender == m_PaintManager.FindControl(_T("btn_try")))
+		else if (msg.pSender == m_PaintManager.FindControl(_T("music_try")))
 		{
 			m_tabs->SelectItem(2);
 		}
-		else if (msg.pSender == m_PaintManager.FindControl(_T("btn_local")))
+		else if (msg.pSender == m_PaintManager.FindControl(_T("music_local")))
 		{
 			m_tabs->SelectItem(3);
 		}
-		else if (msg.pSender == m_PaintManager.FindControl(_T("btn_down")))
+		else if (msg.pSender == m_PaintManager.FindControl(_T("music_down")))
 		{
 			m_tabs->SelectItem(4);
 		}
@@ -249,4 +251,16 @@ void CPlayerWnd::OnTimer(TNotifyUI& msg)
 			m_PaintManager.KillTimer(m_pSearchEdit);
 		}
 	}
+}
+
+void CPlayerWnd::SetBkColor(DWORD dwBackColor)
+{
+	CControlUI* pBk = m_PaintManager.FindControl(_T("bk"));
+	pBk->SetBkColor(dwBackColor);
+}
+
+void CPlayerWnd::UpdateTryList()
+{
+	CTabTryUI* pContain = static_cast<CTabTryUI*>(m_PaintManager.FindControl(_T("container_try")));
+	pContain->AddListNode();
 }
