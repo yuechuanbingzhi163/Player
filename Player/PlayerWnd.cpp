@@ -28,7 +28,7 @@ CControlUI* CPlayerWnd::CreateControl(LPCTSTR pstrClass)
 	}
 	else if (_tcsicmp(pstrClass, _T("MusicTry")) == 0)
 	{
-		return new CTabTryUI(m_PaintManager);
+		return new CTabTryContainerUI();
 	}
 	else if (_tcsicmp(pstrClass, _T("")) == 0)
 	{
@@ -261,6 +261,10 @@ void CPlayerWnd::SetBkColor(DWORD dwBackColor)
 
 void CPlayerWnd::UpdateTryList()
 {
-	CTabTryUI* pContain = static_cast<CTabTryUI*>(m_PaintManager.FindControl(_T("container_try")));
-	pContain->AddListNode();
+	CTabTryContainerUI* pContain = static_cast<CTabTryContainerUI*>(m_PaintManager.FindControl(_T("container_try")));
+	for (int i = 0; i < 20; i++)
+	{
+		pContain->AddListNode();
+	}
+	
 }

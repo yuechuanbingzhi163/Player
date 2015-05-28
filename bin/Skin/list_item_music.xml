@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<Window size="560,32" sizebox="4,4,6,6" caption="0,0,0,30">
-    <HorizontalLayout name="HorizontalLayoutUI1" pos="344,14,404,44" width="60" height="30" bkcolor="#FFFFFFFF">
-        <HorizontalLayout name="HorizontalLayoutUI2" pos="0,0,300,32" width="300" height="32">
+<Window>
+    <VerticalLayout height="33">
+    <HorizontalLayout width="560" height="32">
+        <HorizontalLayout name="HorizontalLayoutUI2"  width="300" height="32">
             <Label name="music_name" text="春天花会开" pos="8,8,198,40" width="190" height="32" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
             <HorizontalLayout name="HorizontalLayoutUI3" height="32" inset="10,8,0,8">
                 <Button name="btn_play" text="P"  width="16" height="16" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
@@ -13,4 +14,6 @@
         <Label name="music_album" text="专辑" width="100" height="32" textpadding="0,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="left"/>
         <Label name="music_timer" text="03:05" width="100" height="32" textpadding="0,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="left" />
     </HorizontalLayout>
+    <Control height="1" bkcolor="#fff0f0f0" />
+    </VerticalLayout>
 </Window>

@@ -2,17 +2,15 @@
 #define _TAB_TRY_H
 
 
-class CTabTryUI : public CContainerUI
+class CTabTryContainerUI : public CContainerUI
 {
 public:
-	CTabTryUI(CPaintManagerUI &paintmanager);
-	BOOL	InitUI();
+	CTabTryContainerUI();
 	BOOL	AddListNode();
 private:
 	CDialogBuilder  m_dlgItemBuilder;
-	CDialogBuilder  m_dlgItemBuilder1;
+	CDialogBuilder  m_builderItem;
 	CListUI*		m_pList;
-	CPaintManagerUI &m_Manager;
 };
 
 #endif

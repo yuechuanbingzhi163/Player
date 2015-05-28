@@ -2,39 +2,39 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{8858d89c-352c-48b1-aa54-417601bd2db9}</UniqueIdentifier>
+      <UniqueIdentifier>{201a595c-6384-4015-a99c-b875d9fa6a78}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Source Files\Utils">
-      <UniqueIdentifier>{7b648748-957b-4f5c-b44e-08566d385f0f}</UniqueIdentifier>
+      <UniqueIdentifier>{507c844e-7bb7-4476-bc68-ba1341904bff}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Core">
-      <UniqueIdentifier>{9eb04a6f-3cde-4dea-937d-21b1f7b6030d}</UniqueIdentifier>
+      <UniqueIdentifier>{0d97187d-f4d4-412c-9348-dd6e3963a1b2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Layout">
-      <UniqueIdentifier>{01cf8d01-9412-4c25-9b26-33939a689f3f}</UniqueIdentifier>
+      <UniqueIdentifier>{9149b1cd-b3e4-45e8-8ab3-0b0ae11a2d05}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Control">
-      <UniqueIdentifier>{cb401faf-7ef5-43a3-98ee-6569ac85de0e}</UniqueIdentifier>
+      <UniqueIdentifier>{2a1f7806-5528-42cb-a8cf-baae16382ce3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{62ae4969-661f-4fee-b3dd-d9f607e8178c}</UniqueIdentifier>
+      <UniqueIdentifier>{0c18c0b0-0e63-4356-a33b-f7cd5334121a}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Header Files\Utils">
-      <UniqueIdentifier>{928bb9d0-75c0-43d7-968b-b5833150911f}</UniqueIdentifier>
+      <UniqueIdentifier>{07cd81c1-9101-4df4-817a-12dec1da71ad}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Core">
-      <UniqueIdentifier>{a3864e6d-612b-40b9-b830-1e8b5a49e90b}</UniqueIdentifier>
+      <UniqueIdentifier>{b82b4f67-27da-44dc-ae14-4b3655ee751d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Layout">
-      <UniqueIdentifier>{c10c4bbc-d6df-401e-a052-b4a4f15ec55b}</UniqueIdentifier>
+      <UniqueIdentifier>{a27a43f8-9361-4eae-98b2-1f47e9bb0963}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Control">
-      <UniqueIdentifier>{23d38ec0-05f9-44b0-8315-24d625ff40ef}</UniqueIdentifier>
+      <UniqueIdentifier>{243525e6-1048-46d3-84c6-b53083487ebb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{959cbaec-8f58-45ce-bd70-b52b0a1a7308}</UniqueIdentifier>
+      <UniqueIdentifier>{94f97e9a-a07c-4b03-81bf-9ebd61fe6575}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -43,6 +43,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UIlib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\WinImplBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Utils\stb_image.c">
@@ -143,9 +146,6 @@
     </ClCompile>
     <ClCompile Include="Control\UIWebBrowser.cpp">
       <Filter>Source Files\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Utils\WinImplBase.cpp">
-      <Filter>Source Files\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

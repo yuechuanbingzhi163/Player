@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <Window >
-    <VerticalLayout name="VerticalLayoutUI1" bkcolor="#FFFFFFFF" bordersize="1" bordercolor="#ffe0e0e0">
+  <VerticalLayout name="VerticalLayoutUI1" bkcolor="#FFFFFFFF" bordersize="1" bordercolor="#ffe0e0e0">
         <VerticalLayout name="VerticalLayoutUI2" pos="91,54,91,154" height="100">
             <Control name="ControlUI1" height="20" />
             <HorizontalLayout name="HorizontalLayoutUI1" pos="213,38,213,68" height="30">
@@ -18,18 +18,18 @@
                 <Button name="btn_claer_all" text="清空" width="60" height="22" padding="10,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" hotimage="file='Main\\all_btn_down.png' corner='2,2,2,2'" borderround="2,2"/>
             </HorizontalLayout>
         </VerticalLayout>
-        <HorizontalLayout name="HorizontalLayoutUI3" inset="30,20,0,0" >
-            <List name="try_music_list" >
-              <ListHeader bkcolor="#fff0f0f0" width="560">
-                <ListHeaderItem text="歌曲" font="4" width="300"  align="left" dragable="false"/>
-                <ListHeaderItem text="歌手" font="4" width="60" align="left" dragable="false"/>
-                <ListHeaderItem text="专辑" font="4" width="100" align="left" dragable="false"/>
-                <ListHeaderItem text="时长" font="4" width="100" align="left" dragable="false"/>
+        <HorizontalLayout name="HorizontalLayoutUI3" inset="30,20,0,0" >           
+            <List name="try_music_list"  itemendellipsis="true" vscrollbar="true" inset="0,0,20,0" >
+              <ListHeader bkcolor="#fff0f0f0" height="32">
+                <Label text="歌曲" font="4" textpadding="0,4,0,4" width="300"  align="left" />
+                <Label text="歌手" font="4" textpadding="0,4,0,4" width="60" align="left" />
+                <Label text="专辑" font="4" textpadding="0,4,0,4" width="100" align="left" />
+                <Label text="时长" font="4" textpadding="0,4,0,4" width="100" align="left" />
               </ListHeader>
             </List>
-            <VerticalLayout name="VerticalLayoutUI3"  width="130" >
-              <Label bkimage="godness.png" width="128" height="200"/>
-            </VerticalLayout>
+          <VerticalLayout name="VerticalLayoutUI3"  width="130" >
+            <Label bkimage="godness.png" width="128" height="200"/>
+          </VerticalLayout>
         </HorizontalLayout>
     </VerticalLayout>
 </Window>
