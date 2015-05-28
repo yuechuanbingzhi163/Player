@@ -1,7 +1,8 @@
 #ifndef _PLAYER_WND_H
 #define _PLAYER_WND_H
-#include "ChangeBgWnd.h"
 
+
+class CChangeBackgroudWnd;
 class CPlayerWnd : public WindowImplBase
 {
 	
@@ -25,6 +26,11 @@ public:
 	virtual LRESULT OnClose(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 	void	Notify(TNotifyUI& msg);
 	void	OnTimer(TNotifyUI& msg);
+	void	SetBkColor(DWORD dwBackColor);
+
+
+public:
+	void	UpdateTryList();
 
 private:
 	CButtonUI *m_pBtnMin;
