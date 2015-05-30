@@ -11,12 +11,13 @@
 #include <tchar.h>
 #include <windows.h>
 #include "..\DuiLib\UIlib.h"
+#include <string>
 using namespace DuiLib;
 
 // TODO: 在此处引用程序需要的其他头文件
-
-
-
+#include "message.h"
+#include "c_singleton.h"
+#include "MessageProxy.h"
 
 //Lib
 #ifdef _DEBUG
@@ -31,4 +32,10 @@ using namespace DuiLib;
 #   else
 #       pragma comment(lib, "..\\Lib\\DuiLib.lib")
 #   endif
+#endif
+
+#if defined(UNICODE) || defined(_UNICODE)
+typedef std::wstring tstring;
+#else
+typedef	std::string tstring;
 #endif

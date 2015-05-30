@@ -54,7 +54,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\Duilib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Duilib;..\Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -84,17 +84,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChangeBgWnd.h" />
-    <ClInclude Include="ColorListUI.h" />
+    <ClInclude Include="message.h" />
+    <ClInclude Include="MessageProxy.h" />
     <ClInclude Include="PlayerWnd.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TabLibrary.h" />
     <ClInclude Include="TabTry.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TryListUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChangeBgWnd.cpp" />
-    <ClCompile Include="ColorListUI.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MessageProxy.cpp" />
     <ClCompile Include="PlayerWnd.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -102,6 +104,7 @@
     </ClCompile>
     <ClCompile Include="TabLibrary.cpp" />
     <ClCompile Include="TabTry.cpp" />
+    <ClCompile Include="TryListUI.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

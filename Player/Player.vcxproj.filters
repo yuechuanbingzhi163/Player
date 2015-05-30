@@ -39,11 +39,17 @@
     <ClInclude Include="TabLibrary.h">
       <Filter>头文件\Tabs</Filter>
     </ClInclude>
-    <ClInclude Include="ColorListUI.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="TabTry.h">
       <Filter>头文件\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="TryListUI.h">
+      <Filter>头文件\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="message.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageProxy.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -62,11 +68,14 @@
     <ClCompile Include="TabLibrary.cpp">
       <Filter>源文件\Tabs</Filter>
     </ClCompile>
-    <ClCompile Include="ColorListUI.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="TabTry.cpp">
       <Filter>源文件\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="TryListUI.cpp">
+      <Filter>源文件\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageProxy.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

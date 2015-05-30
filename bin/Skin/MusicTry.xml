@@ -12,24 +12,25 @@
             <Control name="ControlUI4" pos="2,57,2,77" height="20" />
             <HorizontalLayout name="HorizontalLayoutUI2" pos="68,81,68,111" height="30">
                 <Control name="ControlUI5" width="30" height="30" />
-                <Button name="btn_play_all" text="播放全部" width="80" height="22" padding="0,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" hotimage="file='Main\\all_btn_down.png' corner='2,2,2,2'" borderround="2,2"/>
-                <Button name="btn_add_to" text="添加到" width="80" height="22" padding="10,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" hotimage="file='Main\\all_btn_down.png' corner='2,2,2,2'" borderround="2,2" />
-                <Button name="btn_down_all" text="下载" width="60" height="22" padding="10,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" hotimage="file='Main\\all_btn_down.png' corner='2,2,2,2'" borderround="2,2"/>
-                <Button name="btn_claer_all" text="清空" width="60" height="22" padding="10,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" hotimage="file='Main\\all_btn_down.png' corner='2,2,2,2'" borderround="2,2"/>
+                <Button name="btn_play_all" text="播放全部" width="80" height="22" padding="0,4,0,4" textpadding="20,0,0,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" bkimage="file='Main\\btn_play.png' dest='2,3,18,19'" hotimage="file='Main\\all_btn_over.png' corner='2,2,2,2'" borderround="2,2"/>
+                <Button name="btn_add_to" text="添加到" width="80" height="22" padding="10,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0"  bkimage="file='Main\\btn_add.png' dest='2,3,18,19'"  hotimage="file='Main\\all_btn_over.png' corner='2,2,2,2'" borderround="2,2" />
+                <Button name="btn_down_all" text="下载" width="60" height="22" padding="10,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" bkimage="file='Main\\btn_down.png' dest='2,3,18,19'" hotimage="file='Main\\all_btn_over.png' corner='2,2,2,2'" borderround="2,2"/>
+                <Button name="btn_claer_all" text="清空" width="60" height="22" padding="10,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" bkimage="file='Main\\btn_clear.png' dest='2,3,18,19'" hotimage="file='Main\\all_btn_over.png' corner='2,2,2,2'" borderround="2,2"/>
             </HorizontalLayout>
         </VerticalLayout>
-        <HorizontalLayout name="HorizontalLayoutUI3" inset="30,20,0,0" >           
-            <List name="try_music_list"  itemendellipsis="true" vscrollbar="true" inset="0,0,20,0" >
+        <HorizontalLayout name="HorizontalLayoutUI3" inset="30,20,0,0" >
+          <TryListUI name="try_music_list"  itemendellipsis="true" vscrollbar="true" inset="0,0,20,0" itemhotimage="file=&apos;&apos; corner=&apos;0,1,0,1&apos;"  itemselectedimage="file=&apos;&apos; corner=&apos;0,1,0,1&apos; " itemaltbk="true" >
               <ListHeader bkcolor="#fff0f0f0" height="32">
-                <Label text="歌曲" font="4" textpadding="0,4,0,4" width="300"  align="left" />
+                <Label text="歌曲" font="4" textpadding="5,4,0,4" width="300"  align="left" />
                 <Label text="歌手" font="4" textpadding="0,4,0,4" width="60" align="left" />
                 <Label text="专辑" font="4" textpadding="0,4,0,4" width="100" align="left" />
                 <Label text="时长" font="4" textpadding="0,4,0,4" width="100" align="left" />
               </ListHeader>
-            </List>
+           </TryListUI>
           <VerticalLayout name="VerticalLayoutUI3"  width="130" >
             <Label bkimage="godness.png" width="128" height="200"/>
           </VerticalLayout>
-        </HorizontalLayout>
+        
+      </HorizontalLayout>
     </VerticalLayout>
 </Window>

@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "ColorListUI.h"
 #include "PlayerWnd.h"
 #include "ChangeBgWnd.h"
 

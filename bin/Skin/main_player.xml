@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<Window size="900,600" sizebox="4,4,6,6" caption="0,0,0,50">
+<Window size="900,600" sizebox="4,4,6,6" caption="0,0,0,50" roundcorner="2,2">
     <Font name="宋体" size="12" bold="false" default="true" />
     <Font name="宋体" size="10" bold="false" />
     <Font name="宋体" size="14" bold="false" />
@@ -33,12 +33,12 @@
             <HorizontalLayout name="HorizontalLayoutUI3" >
                 <VerticalLayout name="VerticalLayoutUI2"  width="150" inset="5,6,5,0" bkcolor="#fff0f0f0">
                     <Label name="LabelUI1" text="在线音乐" width="140" height="30" textcolor="#ff999999" />
-                    <Option name="music_lib" text="音乐馆" height="26" textcolor="#FF000000"  textpadding="20,7,0,7" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png"  group="music"/>
-                    <Option name="music_rep" text="乐库"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
+                    <Option name="music_lib" text="音乐馆" height="26" textcolor="#FF000000"  textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png"  group="music"/>
+                    <Option name="music_rep" text="乐库"   height="26" textcolor="#FF000000" textpadding="26,7,0,7"  borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
                     <Label name="LabelUI2" text="我的音乐"  width="140" height="30" textcolor="#ff999999"  />
-                    <Option name="music_try" text="试听列表"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
-                    <Option name="music_local" text="本地导入"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
-                    <Option name="music_down" text="下载的歌曲"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
+                    <Option name="music_try" text="试听列表"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
+                    <Option name="music_local" text="本地导入"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
+                    <Option name="music_down" text="下载的歌曲"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
                     <HorizontalLayout name="HorizontalLayoutUI5"  height="30">
                         <Label name="LabelUI3" text="我创建的"  width="100" height="30" textcolor="#FF999999" disabledtextcolor="#FFA7A6AA" />
                         <Button name="btn_addlist"  width="24" height="24" padding="8,3,0,3" textcolor="#FF000000" bkimage="file='main\\btn_add_opt.png' dest='4,4,20,20'" hotimage="file='main\\all_btn_over.png'" disabledtextcolor="#FFA7A6AA" align="center" />

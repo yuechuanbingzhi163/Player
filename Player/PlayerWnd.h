@@ -5,13 +5,10 @@
 class CChangeBackgroudWnd;
 class CPlayerWnd : public WindowImplBase
 {
-	
 public:
-public:
-
 	CPlayerWnd();
 	~CPlayerWnd();
-
+	static HWND GetPlayerHWnd();
 public:
 
 	LPCTSTR GetWindowClassName() const;	

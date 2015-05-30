@@ -1,16 +1,15 @@
 #ifndef _TAB_TRY_H
 #define _TAB_TRY_H
 
-
-class CTabTryContainerUI : public CContainerUI
+class CTryListUI;
+class CTabTryContainerUI : public CContainerUI , public IDialogBuilderCallback
 {
 public:
 	CTabTryContainerUI();
-	BOOL	AddListNode();
+	virtual CControlUI* CreateControl(LPCTSTR pstrClass);
+	
 private:
 	CDialogBuilder  m_dlgItemBuilder;
-	CDialogBuilder  m_builderItem;
-	CListUI*		m_pList;
 };
 
 #endif

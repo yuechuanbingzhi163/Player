@@ -1,6 +1,7 @@
 #include "StdAfx.h"
 #include "TabLibrary.h"
 #include "TabTry.h"
+#include "TryListUI.h"
 #include "ChangeBgWnd.h"
 #include "PlayerWnd.h"
 
@@ -102,7 +103,6 @@ LRESULT CPlayerWnd::ResponseDefaultKeyEvent(WPARAM wParam)
 	return FALSE;
 }
 
-
 void CPlayerWnd::InitWindow()
 {
 	m_pBtnMin = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("btn_min")));
@@ -156,6 +156,14 @@ LRESULT CPlayerWnd::HandleCustomMessage(UINT uMsg, WPARAM wParam, LPARAM lParam,
 			bHandled = true;
 		}
 		return 0;
+	}
+	else if(uMsg == WM_PLAY_MUSIC)
+	{
+
+	}
+	else if(uMsg == WM_DOWN_MUSIC)
+	{
+
 	}
 
 	return 0;
@@ -237,6 +245,10 @@ void CPlayerWnd::Notify(TNotifyUI& msg)
 		}
 
 	}
+	else if (_tcsicmp(msg.sType, _T("itemactivate")) == 0)
+	{
+		int i = 0;
+	}
 }
 
 void CPlayerWnd::OnTimer(TNotifyUI& msg)
@@ -261,10 +273,10 @@ void CPlayerWnd::SetBkColor(DWORD dwBackColor)
 
 void CPlayerWnd::UpdateTryList()
 {
-	CTabTryContainerUI* pContain = static_cast<CTabTryContainerUI*>(m_PaintManager.FindControl(_T("container_try")));
+	CTryListUI* pContain = static_cast<CTryListUI*>(m_PaintManager.FindControl(_T("try_music_list")));
 	for (int i = 0; i < 20; i++)
 	{
-		pContain->AddListNode();
+		pContain->AddListNode(i,_T("默上花开"),_T("古力娜扎"),_T("默"),_T("03:23"));
 	}
 	
 }
