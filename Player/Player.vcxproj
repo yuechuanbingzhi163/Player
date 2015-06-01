@@ -88,8 +88,6 @@
     <ClInclude Include="MessageProxy.h" />
     <ClInclude Include="PlayerWnd.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="TabLibrary.h" />
-    <ClInclude Include="TabTry.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TryListUI.h" />
   </ItemGroup>
@@ -102,8 +100,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="TabLibrary.cpp" />
-    <ClCompile Include="TabTry.cpp" />
     <ClCompile Include="TryListUI.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

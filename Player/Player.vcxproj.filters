@@ -36,12 +36,6 @@
     <ClInclude Include="ChangeBgWnd.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="TabLibrary.h">
-      <Filter>头文件\Tabs</Filter>
-    </ClInclude>
-    <ClInclude Include="TabTry.h">
-      <Filter>头文件\Tabs</Filter>
-    </ClInclude>
     <ClInclude Include="TryListUI.h">
       <Filter>头文件\Tabs</Filter>
     </ClInclude>
@@ -64,12 +58,6 @@
     </ClCompile>
     <ClCompile Include="ChangeBgWnd.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="TabLibrary.cpp">
-      <Filter>源文件\Tabs</Filter>
-    </ClCompile>
-    <ClCompile Include="TabTry.cpp">
-      <Filter>源文件\Tabs</Filter>
     </ClCompile>
     <ClCompile Include="TryListUI.cpp">
       <Filter>源文件\Tabs</Filter>

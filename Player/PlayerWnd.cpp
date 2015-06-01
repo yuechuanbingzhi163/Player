@@ -1,6 +1,4 @@
 #include "StdAfx.h"
-#include "TabLibrary.h"
-#include "TabTry.h"
 #include "TryListUI.h"
 #include "ChangeBgWnd.h"
 #include "PlayerWnd.h"
@@ -23,13 +21,13 @@ LPCTSTR CPlayerWnd::GetWindowClassName() const
 
 CControlUI* CPlayerWnd::CreateControl(LPCTSTR pstrClass)
 {
-	if (_tcsicmp(pstrClass, _T("MusicLib")) == 0)
+	if (_tcsicmp(pstrClass, _T("")) == 0)
 	{
-		return new CTabLibraryUI();
+		//return new CTabLibraryUI();
 	}
-	else if (_tcsicmp(pstrClass, _T("MusicTry")) == 0)
+	else if (_tcsicmp(pstrClass, _T("TryListUI")) == 0)
 	{
-		return new CTabTryContainerUI();
+		return new CTryListUI();
 	}
 	else if (_tcsicmp(pstrClass, _T("")) == 0)
 	{
@@ -273,10 +271,10 @@ void CPlayerWnd::SetBkColor(DWORD dwBackColor)
 
 void CPlayerWnd::UpdateTryList()
 {
-	CTryListUI* pContain = static_cast<CTryListUI*>(m_PaintManager.FindControl(_T("try_music_list")));
+	CTryListUI* pList = static_cast<CTryListUI*>(m_PaintManager.FindControl(_T("try_music_list")));
 	for (int i = 0; i < 20; i++)
 	{
-		pContain->AddListNode(i,_T("默上花开"),_T("古力娜扎"),_T("默"),_T("03:23"));
+		pList->AddListNode(i,_T("默上花开"),_T("古力娜扎"),_T("默"),_T("03:23"));
 	}
 	
 }

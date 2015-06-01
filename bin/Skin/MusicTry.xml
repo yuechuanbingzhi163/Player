@@ -19,7 +19,7 @@
             </HorizontalLayout>
         </VerticalLayout>
         <HorizontalLayout name="HorizontalLayoutUI3" inset="30,20,0,0" >
-          <TryListUI name="try_music_list"  itemendellipsis="true" vscrollbar="true" inset="0,0,20,0" itemhotimage="file=&apos;&apos; corner=&apos;0,1,0,1&apos;"  itemselectedimage="file=&apos;&apos; corner=&apos;0,1,0,1&apos; " itemaltbk="true" >
+          <TryListUI name="try_music_list"  vscrollbar="true" itemendellipsis="true"   inset="0,0,20,0" itemhotimage="file=&apos;&apos; corner=&apos;0,1,0,1&apos;"  itemselectedimage="file=&apos;&apos; corner=&apos;0,1,0,1&apos; " itemaltbk="true" >
               <ListHeader bkcolor="#fff0f0f0" height="32">
                 <Label text="歌曲" font="4" textpadding="5,4,0,4" width="300"  align="left" />
                 <Label text="歌手" font="4" textpadding="0,4,0,4" width="60" align="left" />
