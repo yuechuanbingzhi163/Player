@@ -45,6 +45,12 @@
     <ClInclude Include="MessageProxy.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="TryContainer.h">
+      <Filter>头文件\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="LibContainer.h">
+      <Filter>头文件\Tabs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -64,6 +70,12 @@
     </ClCompile>
     <ClCompile Include="MessageProxy.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TryContainer.cpp">
+      <Filter>源文件\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="LibContainer.cpp">
+      <Filter>源文件\Tabs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

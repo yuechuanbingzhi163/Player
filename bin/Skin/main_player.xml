@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<Window size="900,600" sizebox="4,4,6,6" caption="0,0,0,50" roundcorner="2,2">
+<Window size="900,600" sizebox="4,4,6,6" caption="0,0,0,50" roundcorner="2,2" bordersize="1" mininfo="900,600">
     <Font name="宋体" size="12" bold="false" default="true" />
     <Font name="宋体" size="10" bold="false" />
     <Font name="宋体" size="14" bold="false" />
@@ -31,7 +31,7 @@
         </HorizontalLayout>
         <VerticalLayout name="VerticalLayoutUI1" >
             <HorizontalLayout name="HorizontalLayoutUI3" >
-                <VerticalLayout name="VerticalLayoutUI2"  width="150" inset="5,6,5,0" bkcolor="#fff0f0f0" vscrollbar="true">
+                <VerticalLayout name="VerticalLayoutUI2"  width="150" inset="5,6,5,0" bkcolor="#fff0f0f0" >
                     <Label name="LabelUI1" text="在线音乐" width="140" height="30" textcolor="#ff999999" />
                     <Option name="music_lib" text="音乐馆" height="26" textcolor="#FF000000"  textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png"  group="music"/>
                     <Option name="music_rep" text="乐库"   height="26" textcolor="#FF000000" textpadding="26,7,0,7"  borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
@@ -54,38 +54,7 @@
                       <Text text="2" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />
                     </HorizontalLayout>
                     <HorizontalLayout>
-                      <VerticalLayout name="VerticalLayoutUI1" bkcolor="#FFFFFFFF" bordersize="1" bordercolor="#ffe0e0e0">
-                        <VerticalLayout name="VerticalLayoutUI2" pos="91,54,91,154" height="100">
-                          <Control name="ControlUI1" height="20" />
-                          <HorizontalLayout name="HorizontalLayoutUI1" pos="213,38,213,68" height="30">
-                            <Control name="ControlUI2" width="30" height="30" />
-                            <Label name="LabelUI1" text="试听列表" width="70" height="30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="3" align="bottom"/>
-                            <Label name="lab_count" text="共123首" width="60" height="30" textcolor="#00C0C0C0" disabledtextcolor="#FFA7A6AA"  align="bottom"/>
-                            <Control name="ControlUI3" />
-                          </HorizontalLayout>
-                          <Control name="ControlUI4" pos="2,57,2,77" height="20" />
-                          <HorizontalLayout name="HorizontalLayoutUI2" pos="68,81,68,111" height="30">
-                            <Control name="ControlUI5" width="30" height="30" />
-                            <Button name="btn_play_all" text="播放全部" width="80" height="22" padding="0,4,0,4" textpadding="20,0,0,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" bkimage="file='Main\\btn_play.png' dest='2,3,18,19'" hotimage="file='Main\\all_btn_over.png' corner='2,2,2,2'" borderround="2,2"/>
-                            <Button name="btn_add_to" text="添加到" width="80" height="22" padding="10,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0"  bkimage="file='Main\\btn_add.png' dest='2,3,18,19'"  hotimage="file='Main\\all_btn_over.png' corner='2,2,2,2'" borderround="2,2" />
-                            <Button name="btn_down_all" text="下载" width="60" height="22" padding="10,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" bkimage="file='Main\\btn_down.png' dest='2,3,18,19'" hotimage="file='Main\\all_btn_over.png' corner='2,2,2,2'" borderround="2,2"/>
-                            <Button name="btn_claer_all" text="清空" width="60" height="22" padding="10,4,0,4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" bordersize="1" bordercolor="#ffe0e0e0" bkimage="file='Main\\btn_clear.png' dest='2,3,18,19'" hotimage="file='Main\\all_btn_over.png' corner='2,2,2,2'" borderround="2,2"/>
-                          </HorizontalLayout>
-                        </VerticalLayout>
-                        <HorizontalLayout name="HorizontalLayoutUI3" inset="30,20,0,0" >
-                          <TryListUI name="try_music_list"  vscrollbar="true" itemendellipsis="true"   inset="0,0,20,0" itemhotimage="file=&apos;&apos; corner=&apos;0,1,0,1&apos;"  itemselectedimage="file=&apos;&apos; corner=&apos;0,1,0,1&apos; " itemaltbk="true" >
-                            <ListHeader bkcolor="#fff0f0f0" height="32">
-                              <Label text="歌曲" font="4" textpadding="5,4,0,4" width="300"  align="left" />
-                              <Label text="歌手" font="4" textpadding="0,4,0,4" width="60" align="left" />
-                              <Label text="专辑" font="4" textpadding="0,4,0,4" width="100" align="left" />
-                              <Label text="时长" font="4" textpadding="0,4,0,4" width="100" align="left" />
-                            </ListHeader>
-                          </TryListUI>
-                          <VerticalLayout name="VerticalLayoutUI3"  width="130" >
-                            <Label bkimage="godness.png" width="128" height="200"/>
-                          </VerticalLayout>
-                        </HorizontalLayout>
-                      </VerticalLayout>
+                      <MusicTry />
                     </HorizontalLayout>
                     <HorizontalLayout>
                       <Text text="4" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />

@@ -1,6 +1,8 @@
 #include "StdAfx.h"
 #include "TryListUI.h"
 #include "ChangeBgWnd.h"
+#include "LibContainer.h"
+#include "TryContainer.h"
 #include "PlayerWnd.h"
 
 CPlayerWnd::CPlayerWnd()
@@ -21,13 +23,13 @@ LPCTSTR CPlayerWnd::GetWindowClassName() const
 
 CControlUI* CPlayerWnd::CreateControl(LPCTSTR pstrClass)
 {
-	if (_tcsicmp(pstrClass, _T("")) == 0)
+	if (_tcsicmp(pstrClass, _T("MusicTry")) == 0)
 	{
-		//return new CTabLibraryUI();
+		return new CTryContainer(m_PaintManager);
 	}
-	else if (_tcsicmp(pstrClass, _T("TryListUI")) == 0)
+	else if (_tcsicmp(pstrClass, _T("MusicLib")) == 0)
 	{
-		return new CTryListUI();
+		return new CLibContainer(m_PaintManager);
 	}
 	else if (_tcsicmp(pstrClass, _T("")) == 0)
 	{
