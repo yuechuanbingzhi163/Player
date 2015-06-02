@@ -52,14 +52,16 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\Duilib;..\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Duilib;..\Include;..\sqlite</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>..\bin\Player.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sqlite.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -84,6 +86,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChangeBgWnd.h" />
+    <ClInclude Include="FileSqlite.h" />
+    <ClInclude Include="LibListUI.h" />
     <ClInclude Include="message.h" />
     <ClInclude Include="MessageProxy.h" />
     <ClInclude Include="PlayerWnd.h" />
@@ -92,9 +96,12 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TryContainer.h" />
     <ClInclude Include="TryListUI.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChangeBgWnd.cpp" />
+    <ClCompile Include="FileSqlite.cpp" />
+    <ClCompile Include="LibListUI.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MessageProxy.cpp" />
     <ClCompile Include="PlayerWnd.cpp" />

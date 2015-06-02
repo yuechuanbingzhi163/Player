@@ -28,6 +28,7 @@ public:
 
 public:
 	void	UpdateTryList();
+	void	UpdateLibList();
 
 private:
 	CButtonUI *m_pBtnMin;
@@ -48,6 +49,9 @@ private:
 	CChangeBackgroudWnd *m_pChangBgWnd;
 
 	CTabLayoutUI* m_tabs;
+	CTabLayoutUI* m_tabslib;
+
+	int m_nScrollIndex;
 };
 
 

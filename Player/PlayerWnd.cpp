@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "TryListUI.h"
+#include "LibListUI.h"
 #include "ChangeBgWnd.h"
 #include "LibContainer.h"
 #include "TryContainer.h"
@@ -9,6 +10,7 @@ CPlayerWnd::CPlayerWnd()
 	: m_nIncWidth(5)
 	, m_nSearchWidth(200)
 	, TimerId(10)
+	, m_nScrollIndex(0)
 {}
 
 CPlayerWnd::~CPlayerWnd()
@@ -117,7 +119,9 @@ void CPlayerWnd::InitWindow()
 	m_pBtnDown = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("music_down")));
 
 	m_tabs	=  static_cast<CTabLayoutUI*>(m_PaintManager.FindControl(_T("tabs")));
+	m_tabslib = static_cast<CTabLayoutUI*>(m_PaintManager.FindControl(_T("tabs_lib")));
 	UpdateTryList();
+	UpdateLibList();
 	m_pChangBgWnd = NULL;
 }
 
@@ -208,6 +212,24 @@ void CPlayerWnd::Notify(TNotifyUI& msg)
 		
 			m_pChangBgWnd->ShowWindow(true);
 		}
+		else if (msg.pSender->GetName() == _T("btn_pre_pic"))
+		{
+			CHorizontalLayoutUI* pControl = static_cast<CHorizontalLayoutUI*>(m_PaintManager.FindControl(_T("pic_hor")));
+			TCHAR szPath[256] = {0};
+			m_nScrollIndex = (m_nScrollIndex - 1) % 4;
+			if (m_nScrollIndex < 0)
+				m_nScrollIndex = 3;
+			swprintf(szPath,256,_T("picture\\scroll%d.jpg"),m_nScrollIndex);
+			pControl->SetBkImage(szPath);
+		}
+		else if (msg.pSender->GetName() == _T("btn_next_pic"))
+		{
+			CHorizontalLayoutUI* pControl = static_cast<CHorizontalLayoutUI*>(m_PaintManager.FindControl(_T("pic_hor")));
+			TCHAR szPath[256] = {0};
+			m_nScrollIndex = (m_nScrollIndex + 1) % 4;
+			swprintf(szPath,256,_T("picture\\scroll%d.jpg"),m_nScrollIndex);
+			pControl->SetBkImage(szPath);
+		}
 	}
 	else if (_tcsicmp(msg.sType, _T("timer")) == 0)
 	{
@@ -215,6 +237,7 @@ void CPlayerWnd::Notify(TNotifyUI& msg)
 	}
 	else if (_tcsicmp(msg.sType, _T("selectchanged")) == 0)
 	{
+		//music
 		if (msg.pSender == m_PaintManager.FindControl(_T("music_lib")))
 		{
 			m_tabs->SelectItem(0);
@@ -244,6 +267,35 @@ void CPlayerWnd::Notify(TNotifyUI& msg)
 			m_tabs->SelectItem(6);
 		}
 
+		//lib
+		else if(msg.pSender == m_PaintManager.FindControl(_T("opt_recommend")))
+		{
+			m_tabslib->SelectItem(0);
+		}
+		else if(msg.pSender == m_PaintManager.FindControl(_T("opt_rank")))
+		{
+			m_tabslib->SelectItem(1);
+		}
+		else if(msg.pSender == m_PaintManager.FindControl(_T("opt_list")))
+		{
+			m_tabslib->SelectItem(2);
+		}
+		else if(msg.pSender == m_PaintManager.FindControl(_T("opt_radio")))
+		{
+			m_tabslib->SelectItem(3);
+		}
+		else if(msg.pSender == m_PaintManager.FindControl(_T("opt_class")))
+		{
+			m_tabslib->SelectItem(4);
+		}
+		else if(msg.pSender == m_PaintManager.FindControl(_T("opt_mv")))
+		{
+			m_tabslib->SelectItem(5);
+		}
+		else if(msg.pSender == m_PaintManager.FindControl(_T("opt_find")))
+		{
+			m_tabslib->SelectItem(6);
+		}
 	}
 	else if (_tcsicmp(msg.sType, _T("itemactivate")) == 0)
 	{
@@ -279,4 +331,13 @@ void CPlayerWnd::UpdateTryList()
 		pList->AddListNode(i,_T("默上花开"),_T("古力娜扎"),_T("默"),_T("03:23"));
 	}
 	
+}
+
+void CPlayerWnd::UpdateLibList()
+{
+	CLibListUI* pList = static_cast<CLibListUI*>(m_PaintManager.FindControl(_T("lib_music_list")));
+	for (int i = 0; i < 20; i++)
+	{
+		pList->AddListNode(_T("picture\\scroll1.jpg"),_T("古力娜扎"),_T("默上花开"));
+	}
 }

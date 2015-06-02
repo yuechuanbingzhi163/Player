@@ -18,6 +18,13 @@ using namespace DuiLib;
 #include "message.h"
 #include "c_singleton.h"
 #include "MessageProxy.h"
+#include "rw_lock.h"
+#include "public.h"
+#include "c_file.h"
+#include "Utils.h"
+using namespace zn;
+
+
 
 //Lib
 #ifdef _DEBUG
@@ -33,6 +40,9 @@ using namespace DuiLib;
 #       pragma comment(lib, "..\\Lib\\DuiLib.lib")
 #   endif
 #endif
+
+
+
 
 #if defined(UNICODE) || defined(_UNICODE)
 typedef std::wstring tstring;

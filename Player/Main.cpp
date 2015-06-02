@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "PlayerWnd.h"
+#include "FileSqlite.h"
 
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*lpCmdLine*/, int nCmdShow)
 {
@@ -11,6 +12,14 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*l
 
 	HRESULT Hr = ::CoInitialize(NULL);
 	if( FAILED(Hr) ) return 0;
+
+	TCHAR szPath[MAX_PATH] = {0};
+	tstring strAppPath = GetAppPath();
+	swprintf(szPath,MAX_PATH,_T("%s%s"),strAppPath.c_str(),_T("\\file.db"));
+
+	if (!CFileSQLite::get_instance()->open(UnicodeToUtf8(szPath)))
+			CFileSQLite::get_instance()->close();
+
 
 	CPlayerWnd* pFrame = new CPlayerWnd();
 	if( pFrame == NULL ) return 0;
@@ -23,6 +32,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*l
 	pFrame->ShowWindow(true);
 	CPaintManagerUI::MessageLoop();
 
+	CFileSQLite::get_instance()->close();
 	::CoUninitialize();
 	return 0;
 }

@@ -79,7 +79,7 @@ BOOL CTryListUI::AddListNode(int musicId,LPCTSTR lpName,LPCTSTR lpSinger, LPCTST
 	CListContainerElementUI* pControl = NULL;
 	if( !m_dlgItemBuilder.GetMarkup()->IsValid() ) 
 	{
-		pControl = static_cast<CListContainerElementUI*>(m_dlgItemBuilder.Create(_T("list_item_music.xml"), (UINT)0, NULL, m_pManager));
+		pControl = static_cast<CListContainerElementUI*>(m_dlgItemBuilder.Create(_T("list_item_try.xml"), (UINT)0, NULL, m_pManager));
 	} 
 	else
 	{
