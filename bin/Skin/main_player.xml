@@ -34,12 +34,12 @@
         <HorizontalLayout name="HorizontalLayoutUI3" >
           <VerticalLayout name="VerticalLayoutUI2"  width="150" inset="5,6,5,0" bkcolor="#fff0f0f0" >
             <Label name="LabelUI1" text="在线音乐" width="140" height="30" textcolor="#ff999999" />
-            <Option name="music_lib" text="音乐馆" height="26" textcolor="#FF000000"  textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png"  group="music"/>
-            <Option name="music_rep" text="乐库"   height="26" textcolor="#FF000000" textpadding="26,7,0,7"  borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
+            <Option name="music_lib" text="音乐馆" height="26" textcolor="#FF000000"  textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_lib.png' dest='2,6,16,20'"  group="music"/>
+            <Option name="music_rep" text="乐库"   height="26" textcolor="#FF000000" textpadding="20,7,0,7"  borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_rep.png' dest='2,6,16,20'" group="music"/>
             <Label name="LabelUI2" text="我的音乐"  width="140" height="30" textcolor="#ff999999"  />
-            <Option name="music_try" text="试听列表"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
-            <Option name="music_local" text="本地导入"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
-            <Option name="music_down" text="下载的歌曲"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" hotimage="file='main\\item_hot.png'" selectedimage="main\\item_select.png" group="music"/>
+            <Option name="music_try" text="试听列表"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_try.png' dest='2,6,16,20'" group="music"/>
+            <Option name="music_local" text="本地导入"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_local.png' dest='2,6,16,20'" group="music"/>
+            <Option name="music_down" text="下载的歌曲"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_down.png' dest='2,6,16,20'" group="music"/>
             <HorizontalLayout name="HorizontalLayoutUI5"  height="30">
               <Label name="LabelUI3" text="我创建的"  width="100" height="30" textcolor="#FF999999" disabledtextcolor="#FFA7A6AA" />
               <Button name="btn_addlist"  width="24" height="24" padding="8,3,0,3" textcolor="#FF000000" bkimage="file='main\\btn_add_opt.png' dest='4,4,20,20'" hotimage="file='main\\all_btn_over.png'" disabledtextcolor="#FFA7A6AA" align="center" />
@@ -77,9 +77,9 @@
         </HorizontalLayout>
         <HorizontalLayout name="HorizontalLayoutUI4" height="50" bkcolor="#FF2B3141">
           <HorizontalLayout name="HorizontalLayoutUI6" width="150" inset="8,0,8,0" childpadding="15">
-            <Button name="btn_pre"  bkimage="main\\btn_prev.png" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" pushedimage="file='main\\all_btn_push.png' corner='2,2,2,2'"  width="31" height="31" padding="0,10,0,9" borderround="31,31" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
-            <Button name="btn_play"   bkimage="main\\btn_play_1.png" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" pushedimage="file='main\\all_btn_push.png' corner='2,2,2,2'" width="42" height="42" padding="0,4,0,4" borderround="42,42" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
-            <Button name="btn_next"  bkimage="main\\btn_next.png" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" pushedimage="file='main\\all_btn_push.png' corner='2,2,2,2'"  width="31" height="31" padding="0,10,0,9" borderround="31,31" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Button name="btn_pre"  bkimage="main\\btn_prev.png" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" pushedimage="file='main\\all_btn_push.png' corner='2,2,2,2'"  width="30" height="30" padding="0,10,0,10" borderround="30,30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Button name="btn_play"   bkimage="main\\btn_play_1.png" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" pushedimage="file='main\\all_btn_push.png' corner='2,2,2,2'" width="38" height="38" padding="0,4,0,4" borderround="38,38" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Button name="btn_next"  bkimage="main\\btn_next.png" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" pushedimage="file='main\\all_btn_push.png' corner='2,2,2,2'"  width="30" height="30" padding="0,10,0,10" borderround="30,30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
           </HorizontalLayout>
           <HorizontalLayout name="HorizontalLayoutUI7" inset="20,5,20,5">
             <Button name="btn_liric_wnd"  width="40" height="40" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
@@ -90,18 +90,18 @@
               </HorizontalLayout>
               <Progress name="pro_timer" width="340" height="4" padding="0,5,0,0" bkcolor="#FFCACBCF"  min="0" max="100" value="50" hor="true" bkimage="file=&apos;progress_bg.png&apos; corner=&apos;5,0,5,0&apos;" foreimage="file=&apos;progress_fore.png&apos; corner=&apos;2,0,2,0&apos;"/>
             </VerticalLayout>
-            <HorizontalLayout name="HorizontalLayoutUI9"  inset="5,8,5,8">
-              <Button name="btn_quality"  width="48" height="24" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <HorizontalLayout name="HorizontalLayoutUI9"  inset="5,0,5,0">
+              <Button name="btn_quality"  width="48" height="24" textcolor="#FF000000" padding="0,8,0,8" disabledtextcolor="#FFA7A6AA" align="center" />
               <Control name="ControlUI6"  width="10"  />
-              <Option name="opt_like"  bkimage="main\\heart_normal.png" selectedimage="main\\heart_select.png" width="16" height="16" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" selected="true"/>
+              <Option name="opt_like"  bkimage="main\\heart_normal.png"  padding="0,13,0,13" selectedimage="main\\heart_select.png" width="14" height="14" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" selected="true"/>
               <Control name="ControlUI7"  width="10"  />
-              <Button name="btn_down_music" bkimage="file='main\\btn_down.png'" hotimage="file='main\\btn_down_hot.png'" width="16" height="16" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+              <Button name="btn_down_music" bkimage="file='main\\btn_down_1.png'" padding="0,13,0,13" hotimage="file='main\\btn_down_hot.png'" width="14" height="14" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
               <Control name="ControlUI8"  width="10" />
-              <Button name="btn_volume"   bkimage="main\\btn_volume.png" hotimage="file='main\\btn_volume_hot.png'" width="16" height="16" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+              <Button name="btn_volume"   bkimage="main\\btn_volume.png" padding="0,13,0,13" hotimage="file='main\\btn_volume_hot.png'" width="14" height="14" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
               <Control name="ControlUI9"  width="10"  />
-              <Button name="btn_desk_liric"  bkimage="main\\btn_lirics.png"  width="16" height="16" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+              <Button name="btn_desk_liric"  bkimage="main\\btn_lirics.png" hotimage="main\\btn_lirics_hot.png" padding="0,13,0,13" width="14" height="14" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
               <Control name="ControlUI10"  width="10" />
-              <Button name="btn_cycle"  bkimage="main\\btn_cycle.png" hotimage="main\\btn_cycle_hot.png" width="14" height="14" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+              <Button name="btn_cycle"  bkimage="main\\btn_cycle.png" padding="0,13,0,13" hotimage="main\\btn_cycle_hot.png" width="14" height="14" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
             </HorizontalLayout>
           </HorizontalLayout>
         </HorizontalLayout>
