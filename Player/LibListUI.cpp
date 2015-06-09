@@ -16,7 +16,7 @@ bool CLibListUI::AddListNode(LPCTSTR lpPic,LPCTSTR lpName,LPCTSTR lpSinger)
 	CVerticalLayoutUI* pControl = NULL;
 	if( !m_dlgItemBuilder.GetMarkup()->IsValid() ) 
 	{
-		pControl = static_cast<CVerticalLayoutUI*>(m_dlgItemBuilder.Create(_T("list_item_lib.xml"), (UINT)0, NULL, m_pManager));
+		pControl = static_cast<CVerticalLayoutUI*>(m_dlgItemBuilder.Create(_T("item_lib_rec.xml"), (UINT)0, NULL, m_pManager));
 	} 
 	else
 	{

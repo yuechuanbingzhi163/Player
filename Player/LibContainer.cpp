@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "LibListUI.h"
+#include "LibListListUI.h"
 #include "LibContainer.h"
 
 
@@ -26,7 +27,10 @@ CLibContainer::~CLibContainer()
 
 CControlUI* CLibContainer::CreateControl(LPCTSTR pstrClass)
 {
-	if (_tcsicmp(pstrClass,_T("LibListUI")) == 0)
+	if (_tcsicmp(pstrClass,_T("LibListRecUI")) == 0)
 		return new CLibListUI();
+	else if (_tcsicmp(pstrClass,_T("LibListListUI")) == 0)
+		return new CLibListListUI();
+	
 	return NULL;
 }

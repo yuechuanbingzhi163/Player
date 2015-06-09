@@ -60,6 +60,9 @@
     <ClInclude Include="LibListUI.h">
       <Filter>头文件\Tabs</Filter>
     </ClInclude>
+    <ClInclude Include="LibListListUI.h">
+      <Filter>头文件\Tabs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -90,6 +93,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LibListUI.cpp">
+      <Filter>源文件\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="LibListListUI.cpp">
       <Filter>源文件\Tabs</Filter>
     </ClCompile>
   </ItemGroup>

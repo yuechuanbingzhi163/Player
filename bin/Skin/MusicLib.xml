@@ -14,7 +14,7 @@
                 <Control name="ControlUI2"  height="26" />
             </HorizontalLayout>
             <TabLayout name="tabs_lib">
-                <VerticalLayout name="VerticalLayoutUI3"  inset="20,20,20,0" vscorllbar="true">
+                <VerticalLayout name="VerticalLayoutUI3"  inset="20,20,10,0" vscorllbar="true">
                     <HorizontalLayout name="HorizontalLayoutUI2" height="155">
                         <HorizontalLayout name="pic_hor"   inset="0,36,0,0" bkimage="picture\\scroll0.jpg">
                             <Button name="btn_pre_pic" hotimage="main\\btn_pre_pic.png" pushedimage="main\\btn_pre_pic.png" width="36" height="72" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
@@ -34,13 +34,32 @@
                     </HorizontalLayout>
                     <Control height="1" bkcolor="#ffe0e0e0" padding="0,10,0,0" />
                     <Label text="专辑首发" padding="0,5,0,15" font="4" align="left"></Label>
-                    <LibListUI name="lib_music_list" vscrollbar="true" childpadding="15"></LibListUI>
+                    <LibListRecUI name="lib_list_rec" vscrollbar="true" childpadding="15"></LibListRecUI>
                 </VerticalLayout>
-                <VerticalLayout name="VerticalLayoutUI4">
-                    <Text name="TextUI1" text="2" textpadding="2,0,2,0" align="wrap" />
+                <VerticalLayout name="VerticalLayoutUI4" inset="20,20,10,0" vscrollbar="true">
+                  <Text name="TextUI2" text="2" textpadding="2,0,2,0" align="wrap" />
                 </VerticalLayout>
-                <VerticalLayout name="VerticalLayoutUI5">
-                    <Text name="TextUI2" text="3" textpadding="2,0,2,0" align="wrap" />
+                <VerticalLayout name="VerticalLayoutUI5" inset="20,20,10,0" vscrollbar="true">
+                  <Combo width="80" height="24" bkcolor="#fff0f0f0" borderround="2,2" normalimage="file='main\\combo_normal.png' corner='2,2,2,2' " hotimage="file='main\\combo_foucs.png' corner='2,2,2,2'" pushedimage="file='main\\combo_push.png'" textpadding="4,0,0,0" dropboxsize="0,150" itemtextpadding="4,0,0,0">
+                    <ListLabelElement text="中国风" height="24" textcolor="#ff646464" selected="true"/>
+                    <ListLabelElement text="经典好歌"  height="24" textcolor="#ff646464" />
+                    <ListLabelElement text="网络热歌"  height="24" textcolor="#ff646464" />
+                    <ListLabelElement text="K歌金曲"  height="24" textcolor="#ff646464" />
+                    <ListLabelElement text="影视热歌"  height="24" textcolor="#ff646464" />
+                  </Combo>
+                  <Control height="10" />
+                  <LibListListUI name="lib_list_list"  childpadding="15" height="1280"/>
+                  <HorizontalLayout height="50" inset="0,10,0,10">
+                    <Button float="true" pos="200,10,0,0" width="16" height="30" bkimage="file='main\\btn_pre_page.png' dest='5,10,11,19'" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'"/>
+                    <Button float="true" pos="230,10,0,0" width="16" height="30" text="1" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" hottextcolor="#ff4ebfcd"/>
+                    <Button float="true" pos="260,10,0,0" width="16" height="30" text="2" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" hottextcolor="#ff4ebfcd"/>
+                    <Button float="true" pos="290,10,0,0" width="16" height="30" text="3" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" hottextcolor="#ff4ebfcd"/>
+                    <Button float="true" pos="320,10,0,0" width="16" height="30" text="4" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" hottextcolor="#ff4ebfcd"/>
+                    <Button float="true" pos="350,10,0,0" width="16" height="30" text="5" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" hottextcolor="#ff4ebfcd"/>
+                    <Button float="true" pos="380,10,0,0" width="16" height="30" text="6" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" hottextcolor="#ff4ebfcd"/>
+                    <Button float="true" pos="410,10,0,0" width="16" height="30" text="10" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'" hottextcolor="#ff4ebfcd"/>
+                    <Button float="true" pos="440,10,0,0" width="16" height="30" bkimage="file='main\\btn_next_page.png' dest='5,10,11,19'" hotimage="file='main\\all_btn_over.png' corner='2,2,2,2'"/>                   
+                  </HorizontalLayout>
                 </VerticalLayout>
                 <VerticalLayout name="VerticalLayoutUI6">
                     <Text name="TextUI3" text="4" textpadding="2,0,2,0" align="wrap" />

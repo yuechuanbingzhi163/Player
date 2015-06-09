@@ -50,6 +50,7 @@ public:
     void SetVisible(bool bVisible = true);
     void SetInternVisible(bool bVisible = true);
     void SetMouseEnabled(bool bEnable = true);
+	void SetScrollInc(int iHerizontal = 0, int iVertical = 0);
 
     virtual RECT GetInset() const;
     virtual void SetInset(RECT rcInset); // 设置内边距，相当于设置客户区
@@ -110,6 +111,8 @@ protected:
     CStdPtrArray m_items;
     RECT m_rcInset;
     int m_iChildPadding;
+	int m_iVScrollInc;
+	int m_iHScrollInc;
     bool m_bAutoDestroy;
     bool m_bDelayedDestroy;
     bool m_bMouseChildEnabled;

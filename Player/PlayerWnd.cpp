@@ -1,6 +1,7 @@
 #include "StdAfx.h"
 #include "TryListUI.h"
 #include "LibListUI.h"
+#include "LibListListUI.h"
 #include "ChangeBgWnd.h"
 #include "LibContainer.h"
 #include "TryContainer.h"
@@ -279,6 +280,8 @@ void CPlayerWnd::Notify(TNotifyUI& msg)
 		else if(msg.pSender == m_PaintManager.FindControl(_T("opt_list")))
 		{
 			m_tabslib->SelectItem(2);
+			CVerticalLayoutUI *pVertical = static_cast<CVerticalLayoutUI*>(m_tabslib->GetItemAt(2));
+			pVertical->SetScrollInc(0,30);
 		}
 		else if(msg.pSender == m_PaintManager.FindControl(_T("opt_radio")))
 		{
@@ -335,9 +338,15 @@ void CPlayerWnd::UpdateTryList()
 
 void CPlayerWnd::UpdateLibList()
 {
-	CLibListUI* pList = static_cast<CLibListUI*>(m_PaintManager.FindControl(_T("lib_music_list")));
+	CLibListUI* pList = static_cast<CLibListUI*>(m_PaintManager.FindControl(_T("lib_list_rec")));
 	for (int i = 0; i < 20; i++)
 	{
 		pList->AddListNode(_T("picture\\scroll1.jpg"),_T("古力娜扎"),_T("默上花开"));
+	}
+
+	CLibListListUI* pList1 = static_cast<CLibListListUI*>(m_PaintManager.FindControl(_T("lib_list_list")));
+	for (int i = 0; i < 30; i++)
+	{
+		pList1->AddListNode(_T("picture\\scroll1.jpg"),_T("古力娜扎"),_T("默上花开"),255.6);
 	}
 }

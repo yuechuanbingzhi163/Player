@@ -34,12 +34,12 @@
         <HorizontalLayout name="HorizontalLayoutUI3" >
           <VerticalLayout name="VerticalLayoutUI2"  width="150" inset="5,6,5,0" bkcolor="#fff0f0f0" >
             <Label name="LabelUI1" text="在线音乐" width="140" height="30" textcolor="#ff999999" />
-            <Option name="music_lib" text="音乐馆" height="26" textcolor="#FF000000"  textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_lib.png' dest='2,6,16,20'"  group="music"/>
-            <Option name="music_rep" text="乐库"   height="26" textcolor="#FF000000" textpadding="20,7,0,7"  borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_rep.png' dest='2,6,16,20'" group="music"/>
+            <Option name="music_lib" text="音乐馆" height="26" textcolor="#FF000000"  textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_lib.png' dest='2,6,16,20'"  selectedbkcolor="#ff4ebfcd" selectedtextcolor="#ffffffff"  group="music"/>
+            <Option name="music_rep" text="乐库"   height="26" textcolor="#FF000000" textpadding="20,7,0,7"  borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_rep.png' dest='2,6,16,20'" selectedtextcolor="#ffffffff" selectedbkcolor="#ff4ebfcd" group="music"/>
             <Label name="LabelUI2" text="我的音乐"  width="140" height="30" textcolor="#ff999999"  />
-            <Option name="music_try" text="试听列表"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_try.png' dest='2,6,16,20'" group="music"/>
-            <Option name="music_local" text="本地导入"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_local.png' dest='2,6,16,20'" group="music"/>
-            <Option name="music_down" text="下载的歌曲"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_down.png' dest='2,6,16,20'" group="music"/>
+            <Option name="music_try" text="试听列表"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_try.png' dest='2,6,16,20'" selectedtextcolor="#ffffffff" selectedbkcolor="#ff4ebfcd" group="music"/>
+            <Option name="music_local" text="本地导入"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_local.png' dest='2,6,16,20'" selectedtextcolor="#ffffffff" selectedbkcolor="#ff4ebfcd" group="music"/>
+            <Option name="music_down" text="下载的歌曲"  height="26" textcolor="#FF000000" textpadding="20,7,0,7" borderround="2,2" disabledtextcolor="#FFA7A6AA" align="left" bkimage="file='main\\opt_down.png' dest='2,6,16,20'" selectedtextcolor="#ffffffff" selectedbkcolor="#ff4ebfcd" group="music"/>
             <HorizontalLayout name="HorizontalLayoutUI5"  height="30">
               <Label name="LabelUI3" text="我创建的"  width="100" height="30" textcolor="#FF999999" disabledtextcolor="#FFA7A6AA" />
               <Button name="btn_addlist"  width="24" height="24" padding="8,3,0,3" textcolor="#FF000000" bkimage="file='main\\btn_add_opt.png' dest='4,4,20,20'" hotimage="file='main\\all_btn_over.png'" disabledtextcolor="#FFA7A6AA" align="center" />

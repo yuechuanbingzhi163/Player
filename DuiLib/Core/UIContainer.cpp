@@ -14,7 +14,10 @@ namespace DuiLib
 		m_bMouseChildEnabled(true),
 		m_pVerticalScrollBar(NULL),
 		m_pHorizontalScrollBar(NULL),
-		m_bScrollProcess(false)
+		m_bScrollProcess(false),
+		m_iHScrollInc(8),
+		m_iVScrollInc(8)
+
 	{
 		::ZeroMemory(&m_rcInset, sizeof(m_rcInset));
 	}
@@ -360,7 +363,7 @@ namespace DuiLib
 	void CContainerUI::LineUp()
 	{
 		int cyLine = 8;
-		if( m_pManager ) cyLine = m_pManager->GetDefaultFontInfo()->tm.tmHeight + 8;
+		if( m_pManager ) cyLine = m_pManager->GetDefaultFontInfo()->tm.tmHeight + m_iVScrollInc;
 
 		SIZE sz = GetScrollPos();
 		sz.cy -= cyLine;
@@ -370,7 +373,7 @@ namespace DuiLib
 	void CContainerUI::LineDown()
 	{
 		int cyLine = 8;
-		if( m_pManager ) cyLine = m_pManager->GetDefaultFontInfo()->tm.tmHeight + 8;
+		if( m_pManager ) cyLine = m_pManager->GetDefaultFontInfo()->tm.tmHeight + m_iVScrollInc;
 
 		SIZE sz = GetScrollPos();
 		sz.cy += cyLine;
@@ -412,14 +415,14 @@ namespace DuiLib
 	void CContainerUI::LineLeft()
 	{
 		SIZE sz = GetScrollPos();
-		sz.cx -= 8;
+		sz.cx -= m_iHScrollInc;
 		SetScrollPos(sz);
 	}
 
 	void CContainerUI::LineRight()
 	{
 		SIZE sz = GetScrollPos();
-		sz.cx += 8;
+		sz.cx += m_iHScrollInc;
 		SetScrollPos(sz);
 	}
 
@@ -904,5 +907,13 @@ namespace DuiLib
 		pSubControl=static_cast<CControlUI*>(GetManager()->FindSubControlByName(this,pstrSubControlName));
 		return pSubControl;
 	}
-
+	void CContainerUI::SetScrollInc(int iHerizontal, int iVertical)
+	{
+		if (iHerizontal <= 0 && iVertical <=0)
+			return;
+		if (iHerizontal)
+			m_iHScrollInc = iHerizontal;
+		if (iVertical)
+			m_iVScrollInc = iVertical;
+	}
 } // namespace DuiLib
