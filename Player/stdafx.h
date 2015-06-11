@@ -17,13 +17,14 @@ using namespace DuiLib;
 // TODO: 在此处引用程序需要的其他头文件
 #include "message.h"
 #include "c_singleton.h"
-#include "MessageProxy.h"
 #include "rw_lock.h"
 #include "public.h"
 #include "c_file.h"
 #include "Utils.h"
+#include "net_proxy.h"
+#include "c_file_server.h"
 using namespace zn;
-
+#include "Main.h"
 
 
 //Lib

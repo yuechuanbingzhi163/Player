@@ -48,6 +48,7 @@ Temporary Items
 bin/*.Dll
 bin/*.exe
 bin/*.ilk
+bin/DB
 lib/
 /ipch
 COMMON/Debug

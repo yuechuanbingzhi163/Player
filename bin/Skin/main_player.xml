@@ -58,7 +58,7 @@
                 <MusicTry />
               </HorizontalLayout>
               <HorizontalLayout>
-                <Text text="4" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />
+                <MusicLocal> </MusicLocal>
               </HorizontalLayout>
               <HorizontalLayout>
                 <Text text="5" pos="335, 180, 600, 300" relativepos="50,50,0,0"  float="true" font="4" />

@@ -10,6 +10,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DuiLib", "DuiLib\DuiLib.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sqlite", "sqlite\sqlite.vcxproj", "{16742825-DB71-4284-95BF-F4F6A1A7D240}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetProxy", "NetProxy\NetProxy.vcxproj", "{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -62,6 +64,18 @@ Global
 		{16742825-DB71-4284-95BF-F4F6A1A7D240}.UnicodeRelease|Win32.ActiveCfg = Release|Win32
 		{16742825-DB71-4284-95BF-F4F6A1A7D240}.UnicodeRelease|Win32.Build.0 = Release|Win32
 		{16742825-DB71-4284-95BF-F4F6A1A7D240}.UnicodeRelease|x64.ActiveCfg = Release|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.Debug|Win32.Build.0 = Debug|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.Debug|x64.ActiveCfg = Debug|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.Release|Win32.ActiveCfg = Release|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.Release|Win32.Build.0 = Release|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.Release|x64.ActiveCfg = Release|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.UnicodeDebug|Win32.ActiveCfg = Debug|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.UnicodeDebug|Win32.Build.0 = Debug|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.UnicodeDebug|x64.ActiveCfg = Debug|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.UnicodeRelease|Win32.ActiveCfg = Release|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.UnicodeRelease|Win32.Build.0 = Release|Win32
+		{545D2F6F-5CB1-44D1-AA7B-1289CA8B2A3A}.UnicodeRelease|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

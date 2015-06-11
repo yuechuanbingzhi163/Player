@@ -8,7 +8,7 @@ static bool  OnButtonPlayEvent(void* event)
 	 if( ((TEventUI*)event)->Type == UIEVENT_BUTTONDOWN ) {
         CControlUI* pButton = ((TEventUI*)event)->pSender;
         if( pButton != NULL ) {
-			::PostMessage(CMessagePorxy::get_instance()->GetPlayerHWnd(),WM_PLAY_MUSIC,pButton->GetTag(),0);
+			::PostMessage(CMain::get_instance()->GetPlayerHWnd(),WM_PLAY_MUSIC,pButton->GetTag(),0);
         }
     }
     return true;
@@ -19,7 +19,7 @@ static bool OnButtonDownEvent(void* event)
 	 if( ((TEventUI*)event)->Type == UIEVENT_BUTTONDOWN ) {
         CControlUI* pButton = ((TEventUI*)event)->pSender;
         if( pButton != NULL ) {
-			::PostMessage(CMessagePorxy::get_instance()->GetPlayerHWnd(),WM_DOWN_MUSIC,pButton->GetTag(),0);
+			::PostMessage(CMain::get_instance()->GetPlayerHWnd(),WM_DOWN_MUSIC,pButton->GetTag(),0);
         }
     }
     return true;

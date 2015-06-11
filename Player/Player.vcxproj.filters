@@ -42,9 +42,6 @@
     <ClInclude Include="message.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MessageProxy.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="TryContainer.h">
       <Filter>头文件\Tabs</Filter>
     </ClInclude>
@@ -63,6 +60,12 @@
     <ClInclude Include="LibListListUI.h">
       <Filter>头文件\Tabs</Filter>
     </ClInclude>
+    <ClInclude Include="LocalContainer.h">
+      <Filter>头文件\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -80,9 +83,6 @@
     <ClCompile Include="TryListUI.cpp">
       <Filter>源文件\Tabs</Filter>
     </ClCompile>
-    <ClCompile Include="MessageProxy.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="TryContainer.cpp">
       <Filter>源文件\Tabs</Filter>
     </ClCompile>
@@ -96,6 +96,9 @@
       <Filter>源文件\Tabs</Filter>
     </ClCompile>
     <ClCompile Include="LibListListUI.cpp">
+      <Filter>源文件\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="LocalContainer.cpp">
       <Filter>源文件\Tabs</Filter>
     </ClCompile>
   </ItemGroup>

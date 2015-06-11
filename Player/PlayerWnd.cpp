@@ -5,6 +5,7 @@
 #include "ChangeBgWnd.h"
 #include "LibContainer.h"
 #include "TryContainer.h"
+#include "LocalContainer.h"
 #include "PlayerWnd.h"
 
 CPlayerWnd::CPlayerWnd()
@@ -34,9 +35,9 @@ CControlUI* CPlayerWnd::CreateControl(LPCTSTR pstrClass)
 	{
 		return new CLibContainer(m_PaintManager);
 	}
-	else if (_tcsicmp(pstrClass, _T("")) == 0)
+	else if (_tcsicmp(pstrClass, _T("MusicLocal")) == 0)
 	{
-		//return new CMicroBlogUI(m_PaintManager);
+		return new CLocalContainer(m_PaintManager);
 	}
 
 	return NULL;
