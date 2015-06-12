@@ -22,7 +22,6 @@ using namespace DuiLib;
 #include "c_file.h"
 #include "Utils.h"
 #include "net_proxy.h"
-#include "c_file_server.h"
 using namespace zn;
 #include "Main.h"
 

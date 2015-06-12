@@ -4,12 +4,16 @@
 class CMain : public c_singleton<CMain>
 {
 public:
+	
+	~CMain() 
+	{
+	}
 	int InitSock()
 	{
-		initsocket();    //³õÊ¼»¯ÍøÂç¿â
-		m_pFileServer = static_cast<c_file_server*>(file_server_init());
-		if (!m_pFileServer)
-			return m_pFileServer->_connect("127.0.0.1",6000);
+		initsocket();
+		m_pFileServer = file_server_init();
+		if (m_pFileServer)
+			m_pFileServer->_connect("127.0.0.1",6000);
 		return TRUE;
 	}
 
@@ -20,7 +24,7 @@ public:
 		return TRUE;
 	}
 
-	c_file_server* GetFileServer()
+	i_file_server* GetFileServer()
 	{
 		return m_pFileServer;
 	}
@@ -36,6 +40,6 @@ public:
 	}
 
 private:
-	c_file_server* m_pFileServer;
+	i_file_server* m_pFileServer;
 	HWND m_hPlayerWnd;
 };

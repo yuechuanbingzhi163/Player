@@ -2,7 +2,6 @@
 #define _C_FILE_SERVER_H
 
 
-
 class c_file_server : public i_sock_dispatcher ,public i_file_server
 {
 public:
@@ -26,7 +25,7 @@ public:
 	int _send();
 
 private:
-	c_winsock* m_pConn;
+	c_winsock m_conn;
 };
 
 

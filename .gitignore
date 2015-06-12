@@ -58,6 +58,7 @@ Duilib/Debug
 Duilib/Build
 *.suo
 sqlite/Debug
+bin/*.db
 
 #	# 此为注释 – 将被 Git 忽略 
 #	*.a 

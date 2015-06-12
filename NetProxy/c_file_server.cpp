@@ -1,10 +1,10 @@
 #include "StdAfx.h"
+#include "c_winsock.h"
 #include "c_file_server.h"
 
 
 c_file_server::c_file_server()
 {
-	m_pConn =NULL;
 }
 
 c_file_server::~c_file_server()
@@ -56,24 +56,14 @@ void c_file_server::on_error(c_winsock * con, int error)
 
 int c_file_server::_connect(const char* server, uint16 port)
 {
-	c_winsock *pConn = c_winsock::create_connect(this);
-	if (!pConn)
-		return -1;
-	m_pConn = pConn;
-	m_pConn->_connect(server,port,true);
+	m_conn._connect(server,port,true);
+	m_conn.setdispatcher(this);
 	return 0;
 }
 
 int c_file_server::_disconnect()
 {
-	if (m_pConn)
-	{
-		if ( m_pConn->_disconnect() == 0)
-		{
-			return 0;
-		}
-		m_pConn = NULL;
-	}
+	m_conn._disconnect();
 	return -1;
 }
 

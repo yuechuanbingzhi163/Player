@@ -1,5 +1,4 @@
 #include "StdAfx.h"
-#include "net_proxy.h"
 #include "c_winsock.h"
 #include <mstcpip.h>  
 
@@ -21,15 +20,6 @@ void c_winsock::release()
 {
 	WSACleanup();        //释放套接字资源
 }
-//创建连接
-c_winsock * c_winsock::create_connect(i_sock_dispatcher * dispatcher)
-{
-	c_winsock * con = new c_winsock();
-	if (con == NULL)
-		return NULL;
-	con->setdispatcher(dispatcher);
-	return con;
-}
 
 c_winsock::c_winsock(void)
 	:m_pDispatch(NULL)
@@ -49,8 +39,6 @@ c_winsock::c_winsock(void)
 
 c_winsock::~c_winsock(void)
 {
-	_disconnect();
-	c_winsock::release();
 }
 
 
@@ -228,6 +216,11 @@ int c_winsock::_setsockopt(int level, int optname,const void *optval, socklen_t 
 	return setsockopt( m_sock, level, optname, (const char *)optval, optlen );
 }
 
+bool c_winsock::_isconnect()
+{
+	return m_bconnect;
+}
+
 void c_winsock::setdispatcher(i_sock_dispatcher * dispatcher)
 {
 	m_pDispatch = dispatcher;
@@ -267,9 +260,9 @@ void c_winsock::close_thead()
 		m_henvet = NULL;
 	}
 	if (m_hthead != NULL)
-	{
+	{	
+		WaitForSingleObject(m_hthead, 1000);
 		::CloseHandle(m_hthead);
-		WaitForSingleObject(m_hthead, 100);
 		m_hthead = NULL;
 	}
 
@@ -302,137 +295,120 @@ void c_winsock::Execute()
 
 		fd_set fdsetexceptds;  
 		fdsetexceptds = m_fdset;  
+			//iret  参数非法 或 winsock初始化非法
+			//except  非阻塞模式connect失败；OOB data is available for reading (only if SO_OOBINLINE is disabled).
 
-		if (m_sock)
+		iret = select( 0, &fdsetRead, &fdsetwrite, &fdsetexceptds, &timeout );
+		switch( iret )
 		{
-			iret = select( 0, &fdsetRead, &fdsetwrite, &fdsetexceptds, &timeout );
-			switch( iret )
+			//错误
+		case SOCKET_ERROR:
 			{
-				//错误
-			case SOCKET_ERROR:
+				if (m_pDispatch)
 				{
-					if (m_pDispatch)
-					{
-						m_pDispatch->on_error(this, WSAGetLastError());
-						_disconnect();
-					}
+					m_pDispatch->on_error(this, WSAGetLastError());
+					_disconnect();
 				}
-				break;
-				//超时
-			case 0:
-				{
+			}
+			break;
+			//超时
+		case 0:
+			{
 
-				}
-				break;
-				//default
-			default:
+			}
+			break;
+			//default
+		default:
+			{
+				if(FD_ISSET(m_sock, &fdsetwrite))    //发现可写  
 				{
-					if(FD_ISSET(m_sock, &fdsetwrite))    //发现可写  
+					if (!m_bconnect)
 					{
-						if (!m_bconnect)
-						{
-							SetEvent(m_henvet);
-							if (onconnect() == 0)
-							{
-								if (m_pDispatch)
-								{
-									m_pDispatch->on_connect(this);
-								}
-							}
-							else
-							{
-								if (m_pDispatch)
-								{
-									m_pDispatch->on_fail(this, WSAGetLastError());
-								}
-								_disconnect();
-							}
-							continue;
-						}
-						onwrite();
-					}
-					if (FD_ISSET(m_sock, &fdsetRead ))
-					{
-						unsigned long ulReadLen = 0;
-						ioctlsocket(m_sock, FIONREAD, &ulReadLen);
-						if ( ulReadLen > 0 )
-						{
-							onread(ulReadLen);
-						}
-						else //缓存区没有数据, 判断是否断开
-						{
-							if (m_bconnect)
-							{
-								if (ulReadLen == 0) //正常断开
-								{
-									if (m_pDispatch)
-									{
-										m_pDispatch->on_disconnect(this, 0);
-									}
-									_disconnect();
-									continue;
-								}
-								else if (ulReadLen == -1 && 
-									WSAGetLastError() == EINTR) //socket正常状态
-								{
-									//.....
-								}
-								else  //异常断开
-								{
-									if (m_pDispatch)
-									{
-										m_pDispatch->on_fail(this, ulReadLen);
-									}
-									_disconnect();
-									continue;
-								}
-							}
-							else
-							{
-
-							}
-						}
-					}
-					if (FD_ISSET(m_sock, &fdsetexceptds))  //错误
-					{
-						if (m_bconnect)
+						SetEvent(m_henvet);
+						if (onconnect() == 0)
 						{
 							if (m_pDispatch)
 							{
-								m_pDispatch->on_error(this, WSAGetLastError());
+								m_pDispatch->on_connect(this);
 							}
-							_disconnect();
 						}
 						else
 						{
-							SetEvent(m_henvet);
 							if (m_pDispatch)
 							{
 								m_pDispatch->on_fail(this, WSAGetLastError());
 							}
 							_disconnect();
 						}
+						continue;
+					}
+					onwrite();
+				}
+				if (FD_ISSET(m_sock, &fdsetRead ))
+				{
+					unsigned long ulReadLen = 0;
+					ioctlsocket(m_sock, FIONREAD, &ulReadLen);
+					if ( ulReadLen > 0 )
+					{
+						onread(ulReadLen);
+					}
+					else //缓存区没有数据, 判断是否断开
+					{
+						if (m_bconnect)
+						{
+							if (ulReadLen == 0) //正常断开
+							{
+								if (m_pDispatch)
+								{
+									m_pDispatch->on_disconnect(this, 0);
+								}
+								_disconnect();
+								continue;
+							}
+							else if (ulReadLen == -1 && 
+								WSAGetLastError() == EINTR) //socket正常状态
+							{
+								//.....
+							}
+							else  //异常断开
+							{
+								if (m_pDispatch)
+								{
+									m_pDispatch->on_fail(this, ulReadLen);
+								}
+								_disconnect();
+								continue;
+							}
+						}
+						else
+						{
+
+						}
 					}
 				}
-			}
-		}
-		else
-		{
-			if (!m_bdisconnect)  //启动重连
-			{
-				m_nconnetnum++;
-				if (m_nconnetnum > 3)
+				if (FD_ISSET(m_sock, &fdsetexceptds))  
 				{
-					Sleep(m_nrecmsec);
+					if (m_bconnect)   
+					{
+						if (m_pDispatch)
+						{
+							m_pDispatch->on_error(this, WSAGetLastError());
+						}
+						_disconnect();
+					}
+					else  
+					{
+						SetEvent(m_henvet);
+						if (m_pDispatch)
+						{
+							m_pDispatch->on_fail(this, WSAGetLastError());
+						}
+						return ;
+					}
 				}
-				printf("av res connect m_nconnetnum=%d\n", m_nconnetnum);
-				_connect(m_addrip.c_str(), m_port, m_asyn);
-			}
-			else
-			{
-				break;
-			}
-		}
+			}//end default
+		}//end switch
+
 		if (GetTickCount() - m_dwtick >= m_msectime)
 		{
 			if (m_pDispatch)
@@ -446,7 +422,6 @@ void c_winsock::Execute()
 	if (m_pDispatch)
 	{
 		m_pDispatch->on_release(this);
-		delete this;
 	}
 }
 

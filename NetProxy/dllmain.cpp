@@ -1,5 +1,7 @@
 // dllmain.cpp : 定义 DLL 应用程序的入口点。
 #include "stdafx.h"
+#include "c_winsock.h"
+#include "c_file_server.h"
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -53,5 +55,7 @@ i_file_server* file_server_init()
 void file_server_release(i_file_server* pServer)
 {
 	if (pServer)
-		delete pServer;
+	{
+		pServer->_disconnect();
+	}
 }

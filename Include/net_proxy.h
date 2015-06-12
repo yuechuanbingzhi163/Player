@@ -99,6 +99,7 @@ public:
 
 class i_file_server
 {
+public:
 	virtual int _connect(const char* server, uint16 port) = 0;
 	virtual int _disconnect() = 0;
 	virtual int _send() = 0;
@@ -106,11 +107,8 @@ class i_file_server
 };
 
 
-
 EXTERN_C SOCK_API  void initsocket();
-
 EXTERN_C SOCK_API  void uninitsocket();
-
 EXTERN_C SOCK_API  i_file_server* file_server_init();
 
 EXTERN_C SOCK_API  void file_server_release(i_file_server* pServer);

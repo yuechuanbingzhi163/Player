@@ -18,7 +18,6 @@ public:
 	//释放
 	static void release();  
 	//创建连接
-	static c_winsock * create_connect(i_sock_dispatcher * conn);
 	int _connect(const char * ipaddr, int16 port, bool asyn = false);
 	int _disconnect();
 	int _send(const char * data, int size);
@@ -28,11 +27,11 @@ public:
 	void _settimer(int msec);  //毫秒
 	void _setrectimer(int msec);  //毫秒
 	int _setsockopt(int level, int optname,const void *optval, socklen_t optlen);
-
+	bool _isconnect();
+	void setdispatcher(i_sock_dispatcher * dispatcher);
 private:
 	static unsigned long __stdcall ThreadProc(void* lParam);
 	virtual void Execute();
-	void setdispatcher(i_sock_dispatcher * dispatcher);
 	int  onconnect();
 	int  create_thead();
 	void close_thead();
